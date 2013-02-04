@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="about-secondary-storage">
+    <title>Sobre storage secundária</title>
+    <para>Storage secundária é associada com um zona, e armazena o seguinte:</para>
+    <itemizedlist>
+        <listitem><para>Templates &mdash; imagens de sistemas operacionais que podem ser utilizadas no boot de máquinas virtuais e podem incluir configurações adicionais, tais como aplicativos pré-instalados</para></listitem>
+        <listitem><para>Imagens ISO &mdash; imagens de disco contendo dados ou mídia  bootável de sistema operacional</para></listitem>
+        <listitem><para>Snapshots de volumes de disco &mdash; cópias de dados de máquinas virtuais que podem ser usadas para recuperação de dados ou na criação de novos templates</para></listitem>
+    </itemizedlist>
+    <para>Os itens em storage secundária NFS da zona estão disponíveis para todos os hosts na zona. O &PRODUCT; gerencia a alocação de discos virtuais hóspedes em equipamentos de storage primária.</para>
+    <para>Para tornar itens na storage secundária disponíveis para todos os hosts na nuvem, você pode adicionar OpenStack Object Storage (Swift, <ulink url="http://swift.openstack.org">swift.openstack.org</ulink>) em adição storage secundária NFS da zona. Ao utilizar Swift, você configura storage Swift para todo o &PRODUCT;, em seguida configura storage NFS secundária para cada zona, como usual. A storage NFS em cada zona atua como uma área intermediária através da qual todos os templates e outros dados da storage secundária passam antes de serem encaminhados para a Swift. A storage Swift atua como um  recurso da nuvem, tornando disponíveis para qualquer zona na nuvem templates e outros dados. Não há hierarquia na storage Swift, apenas um container Swift por objeto de storage. Qualquer storage secundária na nuvem pode obter um container da Swift quando necessário. Não é necessário copiar templates e snapshots de uma zona para outra, como seria requerido ao utilizar somente storage NFS na zona. Tudo está disponível em todo lugar.</para>
+</section>

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<section id="management-server-install-db-local">
+  <title>Instalar o database no nó do servidor de gerenciamento</title>
+  <para>Esta seção descreve como instalar o MySQL na mesma máquina que o servidor de gerenciamento. Esta técnica destina-se a uma implementação simples que tem um nó único do servidor de gerenciamento. Se você tem a implantação  de múltiplos nós do servidor de gerenciamento, você vai utilizar um nó separado para MySQL. Veja <xref linkend="management-server-install-db-external"/>.</para>
+  <orderedlist>
+    <listitem>
+      <para>Instale MySQL do repositório de pacotes da sua distribuição:</para>
+      <para condition="community">No RHEL ou CentOS:</para>
+      <programlisting language="Bash">yum install mysql-server</programlisting>
+      <para condition="community">No Ubuntu:</para>
+      <programlisting language="Bash">apt-get install mysql-server</programlisting>
+    </listitem>
+    <listitem>
+      <para>Edite a configuração do MySQL (/etc/my.cnf ou o arquivo /etc/mysql/my.cnf, dependendo do seu sistema operacional) e insira as seguintes linhas na seção [mysqld]. Você pode colocar essas linhas abaixo da linha datadir. O parâmetro max_connections deve ser definido para 350 multiplicado pelo número de servidores de gerenciamento que você está implantando. Este exemplo assume um servidor de gerenciamento.</para>
+      <note>
+        <para>No Ubuntu, você também ode criar um arquivo /etc/mysql/conf.d/cloudstack.cnf e adicionar estas diretivas lá. Não se esqueça de adicionar [mysqld] na primeira linha do arquivo.</para>
+      </note>
+      <programlisting language="Bash">innodb_rollback_on_timeout=1
+innodb_lock_wait_timeout=600
+max_connections=350
+log-bin=mysql-bin
+binlog-format = 'ROW'</programlisting>
+    </listitem>
+    <listitem>
+      <para>Inicie ou reinicie o MySQL para efetivar a nova configuração.</para>
+      <para>No RHEL/CentOS, o MySQL não é ativado automaticamente após a instalação. Ative-o manualmente.</para>
+      <programlisting language="Bash">service mysqld start</programlisting>
+      <para>No Ubuntu, reinicie o MySQL.</para>
+      <programlisting language="Bash">service mysqld restart</programlisting>
+    </listitem>
+    <listitem>
+      <para>(Somente no CentOS e RHEL; não requerido no Ubuntu)</para>
+      <warning>
+        <para>No RHEL e CentOS, o MySQL não define uma senha de root por padrão. É muito recomendável que você defina uma senha de root como medida de segurança. </para>
+      </warning>
+      <para>Execute o seguinte comando para tornar segura sua instalação. Você pode responder "Y" a todas as questões.</para>
+      <programlisting language="Bash">mysql_secure_installation</programlisting>
+    </listitem>
+    <listitem>
+      <para>Configure o banco de dados. O seguinte comando cria o usuário "cloud" no banco de dados.
+</para>
+      <itemizedlist>
+        <listitem>
+          <para>Em dbpassword, especifique a senha a ser atribuída ao usuário cloud. Você pode escolher não fornecer uma senha, embora não seja recomendado.</para>
+        </listitem>
+        <listitem>
+          <para>Em deploy-as, especifique o username e senha do usuário que está implementando o database. No comando a seguir, é suposto que o usuário root está user implementando o database e criando o usuário "cloud".</para>
+        </listitem>
+        <listitem>
+          <para>(Opcional) Para encryption_type, use arquivo ou web para indicar a técnica utilizada para passar a senha de criptografia de banco de dados. Padrão: arquivo. Veja <xref
+              linkend="about-password-encryption"/>.</para>
+        </listitem>
+        <listitem>
+          <para>(Opcional) Para management_server_key, substitua a chave padrão que é usada para criptografar os parâmetros  confidenciais no arquivo de propriedades do &PRODUCT;. Padrão: password. É altamente recomendado que você substitua isso por um valor mais seguro. Veja <xref
+              linkend="about-password-encryption"/>.</para>
+        </listitem>
+        <listitem>
+          <para>(Opcional) Para database_key, substitua a chave padrão que é usada para criptografar os parâmetros confidenciais no banco de dados do &PRODUCT;. Padrão: password. É altamente recomendável que você substitua isso por um valor mais seguro. Veja <xref
+              linkend="about-password-encryption"/>.</para>
+        </listitem>
+      </itemizedlist>
+      <programlisting language="Bash">cloud-setup-databases cloud:&lt;dbpassword&gt;@localhost \
+--deploy-as=root:&lt;password&gt; \
+-e &lt;encryption_type&gt; \
+-m &lt;management_server_key&gt; \
+-k &lt;database_key&gt;</programlisting>
+      <para>Quando o script estiver concluído, você deve ver  uma mensagem como "Successfully initialized the database."</para>
+    </listitem>
+    <listitem>
+      <para>Se você está executando o hipervisor KVM na mesma máquina que o servidor de gerenciamento,
+        edite /etc/sudoers e adicione a seguinte linha:</para>
+      <programlisting language="Bash">Defaults:cloud !requiretty</programlisting>
+      <note>
+        <para>Este tipo de configuração de máquina única é recomendado somente para uma instalação de avaliação.</para>
+      </note>
+    </listitem>
+    <listitem>
+      <para>Agora que o banco de dados está configurado, você pode terminar  a configuração do sistema operacional para o servidor de gerenciamento. Este comando irá configurar iptables, sudoers, e iniciar o servidor de gerenciamento.</para>
+      <programlisting language="Bash"># cloud-setup-management</programlisting>
+      <para>Você deve ver a mensagem “&PRODUCT; Management Server setup is done.”</para>
+    </listitem>
+  </orderedlist>
+</section>

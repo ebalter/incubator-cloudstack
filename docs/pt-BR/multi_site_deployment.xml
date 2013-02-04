@@ -1,0 +1,50 @@
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0.
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="multi_site_deployment">
+    <title>Implementação multi-site</title>
+    <para>A plataforma do &PRODUCT; é bastante escalável em múltiplos sites através do uso de zonas. O diagrama a seguir mostra um exemplo de implementação multi-site.</para>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/multi-site-deployment.png" />
+        </imageobject>
+        <textobject><phrase>Exemplo de uma implementação multi-site</phrase></textobject>
+    </mediaobject>
+    <para>Data Center 1 abriga o servidor primário de gerenciamento, assim como a zona 1. O database MySQL é replicado em tempo real no servidor secundário de gerenciamento no Data Center 2.</para>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/separate-storage-network.png" />
+        </imageobject>
+        <textobject><phrase>Rede dedicada de storage</phrase></textobject>
+    </mediaobject>
+    <para>Este diagrama ilustra uma configuração com uma rede dedicada de storage. Cada servidor tem quatro NICs, dois conectados às switches da rede do pod e dois conectados a switches da rede de storage.</para>
+    <para>Há dois modos de configurar a rede de storage:</para>
+    <itemizedlist>
+        <listitem><para>NICs acopladas e switches redundantes podem ser implementadas para NFS. Em implementações NFS, switches redundantes e NICs acopladas ainda resultam em uma rede (um bloco CIDR + endereço de default gateway).</para></listitem>
+        <listitem><para>iSCSI pode tirar vantagem de duas redes distintas de storage (dois blocos CIDR, cada um com seu próprio default gateway). Um cliente Multipath iSCSI chavear automaticamente e balancear a carga entre duas redes storage distintas.</para></listitem>
+    </itemizedlist>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/nic-bonding-and-multipath-io.png" />
+        </imageobject>
+        <textobject><phrase>Acoplamento de NICs e Multipath I/O</phrase></textobject>
+    </mediaobject>
+    <para>Este diagrama ilustra as diferenças entre acoplamento de NICs e Multipath I/O (MPIO). A configuração de acoplamento de NICs envolve somente uma rede. MPIO envolve duas redes distintas.</para>
+</section>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="zone-add">
+    <title>Adicionando uma zona</title>
+    <para>Nestes passos se supõe que você já está logado na interface de usuário do &PRODUCT;. Veja <xref linkend="log-in" />.</para>
+    <orderedlist>
+        <listitem><para>(Opcional) Se você irá usar Swift para storage secundária na nuvem, você precisa adicioná-la antes de adicionar zonas.</para>
+            <orderedlist numeration="loweralpha">
+                <listitem><para>Faça login na interface de usuário do &PRODUCT; como administrador.</para></listitem>
+                <listitem><para>Se esta é a primeira vez utilizando a interface de usuário, você verá uma tela de apresentação. Selecione “Experienced user.” O painel de instrumentos é exibido.</para></listitem>
+                <listitem><para>Na barra de navegação à esquerda, clique em Global Settings.</para></listitem>
+                <listitem><para>Na caixa de pesquisa, digite swift.enable e clique no botão de pesquisa.</para></listitem>
+                <listitem><para>Clique no botão de edit e marque swift.enable como true.  
+                    <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="./images/edit-icon.png" />
+                        </imageobject>
+                        <textobject><phrase>edit-icon.png: botão para modificar dados</phrase></textobject>
+                    </inlinemediaobject>
+                </para>
+                </listitem>
+                <listitem><para>Reinicie o servidor de gerenciamento.</para>
+                    <programlisting># service cloud-management restart</programlisting>
+                </listitem>
+                <listitem><para>Recarregue a interface de usuário do &PRODUCT; no navegador e faça logon novamente.</para></listitem>
+            </orderedlist>
+        </listitem>
+        <listitem><para>Na barra de navegação à esquerda, selecione Infrastructure.</para></listitem>
+        <listitem><para>Em Zones, clique em View More.</para></listitem>
+        <listitem><para>(Opcional) Se você está utilizando storage Swift, clique Enable Swift. Forneça o seguinte:</para>
+            <itemizedlist>
+                <listitem><para><emphasis role="bold">URL.</emphasis> A URL Swift.</para></listitem>
+                <listitem><para><emphasis role="bold">Account.</emphasis> A conta Swift.</para></listitem>
+                <listitem><para><emphasis role="bold">Username.</emphasis> O nome de usuário associado à conta Swift.</para></listitem>
+                <listitem><para><emphasis role="bold">Key.</emphasis> A chave Swift.</para></listitem>
+            </itemizedlist>
+        </listitem>
+        <listitem><para>Clique em Add Zone. O consultor de criação de zona será exibido.</para></listitem>
+        <listitem><para>Selecione um dos seguintes tipos de rede:</para>
+            <itemizedlist>
+                <listitem><para><emphasis role="bold">Basic.</emphasis> Para redes no estilo AWS. Provê um rede única a cada instância de máquina virtual é assinalado um endereço IP diretamente da rede. O isolamento de hóspedes pode ser provido através de recursos da camada 3 como grupos seguros (filtragem de endereço IP de origem).</para></listitem>
+                <listitem><para><emphasis role="bold">Advanced.</emphasis> Para topologias de rede mais sofisticadas. Este modelo de rede provê a mais alta flexibilidade na definição de redes hóspedes e oferece customização de rede como firewall, VPN, ou suporte a balanceador de carga.</para></listitem>
+            </itemizedlist>
+            <para>Para informação adicional sobre tipos de redes, veja Configuração de rede.</para>
+        </listitem>
+        <listitem><para>O restante dos passos diferem dependendo se você escolheu Basic ou Advanced. Continue com os passos que se aplicam a você:</para>
+            <itemizedlist>
+                <listitem><para><xref linkend="basic-zone-configuration" /></para></listitem>
+                <listitem><para><xref linkend="advanced-zone-configuration" /></para></listitem>
+            </itemizedlist>
+        </listitem>
+    </orderedlist>
+    <xi:include href="basic-zone-configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="advanced-zone-configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

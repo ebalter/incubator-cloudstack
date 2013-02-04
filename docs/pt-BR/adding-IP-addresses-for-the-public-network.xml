@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="adding-IP-addresses-for-the-public-network">
+    <title>Adicionando endereços IP à rede pública</title>
+    <para>Nestas instruções se supõe que você já está logado na interface de usuário do &PRODUCT;. </para>
+    <orderedlist>
+        <listitem><para>No painel de navegação à esquerda, selecione Infrastructure. Em Zones, clique em View More, então clique na zona desejada.</para></listitem>
+        <listitem><para>Clique na aba Network.</para></listitem>
+        <listitem><para>No nó Public do diagrama, clique em Configure.</para></listitem>
+        <listitem><para>Clique na aba IP Ranges.</para></listitem>
+        <listitem><para>Forneça as seguintes informações:</para>
+        <itemizedlist>
+            <listitem><para>Gateway. O gateway em uso para estes endereços IP</para></listitem>
+            <listitem><para>Netmask. A máscara de rede associada com este intervalo de IPs</para></listitem>
+            <listitem><para>VLAN. A VLAN que será utilizada para tráfego público</para></listitem>
+            <listitem><para>Start IP/End IP. Um intervalo de endereços IP que se supõe serem accessíveis da Internet e que serão alocados para accesso a redes hóspedes.</para></listitem>
+        </itemizedlist>
+        </listitem>
+        <listitem><para>Clique em Add.</para></listitem>
+    </orderedlist>
+    
+    
+    </section>

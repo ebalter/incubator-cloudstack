@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="using-netscaler-load-balancers">
+    <title>Sobre a utilização do balanceador de carga NetScaler</title>
+    <para>O Citrix NetScaler é suportado como um elemento externo de rede para balanceamento de carga em zonas que usam rede avançada (também chamadas zonas avançadas). Configure um balanceador de carga externo quando você quiser prover balanceamento de carga por outros meios que o roteador virtual provido pelo &PRODUCT;.</para>
+    <para>O NetScaler pode ser configurado em modo direto (fora do firewall). Ele deve ser adicionado antes que qualquer regra de balanceamento de carga seja implementada em máquinas virtuais da zona.</para>
+    <para>O comportamento funcional do NetScaler com o &PRODUCT; é o mesmo que é descrito na documentação do &PRODUCT; para uso de um balanceador de carga externo F5. A única exceção é que o F5 suporta domínios de roteamento, e o NetScaler não. O NetScaler ainda não pode ser usado como um firewall.</para>
+    <para>O Citrix NetScaler é oferecido em três variantes. A tabela a seguir sumariza como estas variantes são tratadas no &PRODUCT;.</para>
+    <informaltable>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <thead>
+                <row>
+                    <entry><para>Tipo de NetScaler ADC</para></entry>
+                    <entry><para>Descrição das capacidades</para></entry>
+                    <entry><para>Recursos suportados no &PRODUCT; 3.0.3</para></entry>
+                </row>    
+            </thead>
+            <tbody>
+                <row>
+                    <entry><para>MPX</para></entry>
+                    <entry><para>Dispositivo físico. Capaz de inspeção profunda de pacotes. Pode atuar como application firewall e balanceador de carga</para></entry>
+                    <entry><para>Em zonas avançadas, a funcionalidade de balanceador de carga é suportada sem limitações. Em zonas básicas, NAT estática, elastic IP (EIP), e elastic load balancing (ELB) também são providos</para></entry>
+                    
+                </row>
+                <row>
+                    <entry><para>VPX</para></entry>
+                    <entry><para>Dispositivo virtual. Pode ser executado como máquina virtual nos hipervisores XenServer, ESXi, e Hyper-V. Mesma funcionalidade que MPX</para></entry>
+                    <entry><para>Suportado somente no ESXi. Mesmo suporte funcional que MPX. O &PRODUCT; tratará VPX e MPX como o mesmo tipo de dispositivo</para></entry>
+                </row>
+                <row>
+                    <entry><para>SDX</para></entry>
+                    <entry><para>Dispositivo físico. Pode criar múltiplas instâncias VPX completamente isoladas em um único dispositivo para suportar uso por múltiplos hóspedes</para></entry>
+                    <entry><para>O &PRODUCT; irá dinamicamente aprovisionar, configurar, e gerenciar o ciclo de vida de instâncias VPX no SDX. Instâncias fornecidas são automaticamente adicionadas ao &PRODUCT; – nenhuma configuração manual pelo administrador é requerida. Uma vez que uma instância VPX é adicionada ao &PRODUCT;, ela é tratada da mesma forma que uma VPX em um host ESXi.</para></entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </informaltable>
+</section>

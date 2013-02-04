@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<section id="install-management-server-multi-nodes">
+  <title>Preparar e ativar servidores de gerenciamento adicionais</title>
+  <para>Para o segundo e subsequentes servidores de gerenciamento, você irá instalar o software servidor de gerenciamento, conectá-lo ao banco de dados e configurar o sistema operacional para o servidor de gerenciamento. </para>
+  <orderedlist>
+    <listitem>
+      <para> Execute as etapas em <xref linkend="prepare-os"/> e <xref
+linkend="sect-source-buildrpm"/> ou <xref linkend="sect-source-builddebs"/> conforme 
+        apropriado. </para>
+    </listitem>
+    <listitem>
+      <para>Este passo é requerido somente em instalações onde o XenServer é instalado nos hosts hipervisores.</para>
+      <para>Faça download vhd-util de <ulink
+          url="http://download.cloud.com.s3.amazonaws.com/tools/vhd-util">vhd-util</ulink></para>
+      <para>Se o servidor de gerenciamento é RHEL ou CentOS, copie vhd-util para
+        /usr/lib64/cloud/common/scripts/vm/hypervisor/xenserver.</para>
+      <para>Se o servidor de gerenciamento é Ubuntu, copie vhd-util para
+        /usr/lib/cloud/common/scripts/vm/hypervisor/xenserver/vhd-util.</para>
+    </listitem>
+    <listitem>
+      <para> Certifique-se de que os serviços requeridos são ativados e configurados para ativar no boot.
+        <programlisting><prompt>#</prompt> service rpcbind start
+<prompt>#</prompt> service nfs start
+<prompt>#</prompt> chkconfig nfs on
+<prompt>#</prompt> chkconfig rpcbind on
+</programlisting>
+      </para>
+    </listitem>
+    <listitem>
+      <para>Configure o database client. Observe a ausência do argumento --deploy-as neste
+        caso. (Para mais detalhes sobre os argumentos deste comando, veja <xref
+          linkend="management-server-install-db-external"/>.) </para>
+      <programlisting><prompt>#</prompt> cloud-setup-databases cloud:<replaceable>dbpassword</replaceable>@<replaceable>dbhost</replaceable> -e <replaceable>encryption_type</replaceable> -m <replaceable>management_server_key</replaceable> -k <replaceable>database_key</replaceable>
+      </programlisting>
+    </listitem>
+    <listitem>
+      <para>Configure o sistema operacional e inicie o servidor de gerenciamento:</para>
+      <programlisting><prompt>#</prompt> cloud-setup-management</programlisting>
+      <para>O servidor de gerenciamento neste nó deve agora  estar em execução.</para>
+    </listitem>
+    <listitem>
+      <para>Repita estes passos em cada servidor de gerenciamento adicional. </para>
+    </listitem>
+    <listitem>
+      <para>Certifique-se de configurar um balanceador de carga para os servidores de gerenciamento. Veja Balanceamento de carga do servidor de gerenciamento.</para>
+    </listitem>
+  </orderedlist>
+</section>

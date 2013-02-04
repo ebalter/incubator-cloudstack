@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="management-server-overview">
+    <title>Visão geral da arquitetura de implementação</title>
+    <para>
+       O servidor de gerenciamento é o software do &PRODUCT; que gerencia os recursos da nuvem. Pela interação com o servidor de gerenciamento através de sua interface de usuário ou API, você pode configurar e gerenciar sua infraestrutura de nuvem.
+    </para>
+    <para>
+       O servidor de gerenciamento é executado em um servidor dedicado ou máquina virtual. Ele controla a alocação de máquinas virtuais em hosts e atribui storage e endereços IP às instâncias de máquinas virtuais. O servidor de gerenciamento é executo em um container Tomcat e requer um database MySQL para persistência.
+    </para>
+    <para>
+       A máquina deve atender os requerimentos descritos em "Requerimentos do sistema".
+    </para>
+    <para>O servidor de gerenciamento:
+    </para>
+        <itemizedlist>
+        <listitem>
+            <para>
+               Provê a interface web de usuário para o administrador e uma interface de referência de usuário para usuários finais.
+            </para>
+        </listitem>
+        <listitem>
+            <para>Provê as APIs para o &PRODUCT;.</para>
+        </listitem>
+        <listitem>
+            <para>Gerencia o assinalamento de máquinas virtuais hóspedes a hosts determinados.</para>
+        </listitem>
+        <listitem>
+            <para>
+               Gerencia o assinalamento de endereços IP públicos e privados a determinadas contas.
+            </para>
+        </listitem>
+        <listitem>
+            <para>Gerencia a alocação de storage - como discos virtuais - para hóspedes.</para>
+        </listitem>
+        <listitem>
+            <para>
+               Gerencia snapshots, templates, e imagens ISO, possivelmente replicando estes elementos através de data centers.
+            </para>
+        </listitem>
+        <listitem>
+            <para>Provê um ponto único de configuração para a nuvem.</para>
+        </listitem>
+        </itemizedlist>
+    </section>

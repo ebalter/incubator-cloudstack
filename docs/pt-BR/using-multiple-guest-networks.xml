@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="using-multiple-guest-networks">
+    <title>Usando múltiplas redes hóspedes</title>
+    <para>Em zonas que usam rede avançada, redes adicionais para tráfego hóspede podem ser adicionadas a qualquer tempo após a instalação inicial. Você pode também customizar o nome de domínio associado com a rede especificando um sufixo DNS para cada rede.</para>
+    <para>As redes de uma máquina virtual são definidas em tempo de criação da máquina virtual. Uma máquina virtual não pode adicionar ou remover redes após ter sido criada, embora o usuário possa remover no hóspede o endereço IP da NIC de uma rede específica.</para>
+    <para>Cada máquina virtual tem somente uma rede default. A resposta do DHCP do roteador virtual irá determinar o default gateway do hóspede como aquele da rede default. Múltiplas redes non-default podem ser adicionadas a um hóspede em adição à rede default, única,  requerida. O administrador pode controlar quais redes são disponíveis como rede default.</para>
+    <para>Redes adicionais podem estar disponíveis para todas as contas ou serem assinaladas a uma conta específica. Redes que estão disponíveis para todas as contas são zone-wide. Qualquer usuário com acesso à zona pode criar uma máquina virtual com acesso àquela rede. Estas redes zone-wide proveem pequeno ou nenhum isolamento entre hóspedes. Redes que são assinaladas a contas específicas proveem isolamento robusto.</para>
+    <xi:include href="add-additional-guest-network.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="change-network-offering-on-guest-network.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</section>

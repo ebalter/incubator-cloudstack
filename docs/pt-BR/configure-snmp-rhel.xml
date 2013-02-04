@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<section id="configure-snmp-rhel">
+  <title>Configurando a SNMP Community String em um servidor RHEL</title>
+  <para>A SNMP Community string é similar a uma identifcação de usuário ou senha que provê accesso a um equipamento de rede, tal como um roteador. Esta string é enviada com todas as requisições SNMP. Se a community string está correta, o equipamento responde com a informação requisitada. Se a community string está incorreta, o equipamento descarta a requisição e não responde.</para>
+  <para>O equipamento NetScaler usa SNMP para se comunicar com máquinas virtuais. Você deve instalar o SNMP e
+    configurar a SNMP Community string para uma comunicação segura entre o equipamento NetScaler e a máquina RHEL.</para>
+  <orderedlist>
+    <listitem>
+      <para>Certifique-se de que você instalou o SNMP no RedHat. Caso contrário, execute o seguinte comando:</para>
+      <screen>yum install net-snmp-utils</screen>
+    </listitem>
+    <listitem>
+      <para>Edite o arquivo /etc/snmp/snmpd.conf para permitir o SNMP polling pelo equipamento NetScaler.</para>
+      <orderedlist>
+        <listitem>
+          <para>Mapeie o nome da community em um nome de segurança (local e mynetwork, dependendo de onde a requisiçaõ está vindo):</para>
+          <note>
+            <para>Use uma senha forte ao invés de public quando você editar a tabela a seguir.</para>
+          </note>
+          <screen>#         sec.name   source        community
+com2sec    local      localhost     public
+com2sec   mynetwork   0.0.0.0       public</screen>
+          <note>
+            <para>Configurando 0.0.0.0 permite que todos IPs façam poll no servidor NetScaler.</para>
+          </note>
+        </listitem>
+        <listitem>
+          <para>Mapeie os nomes de segurança em nomes de grupo: </para>
+          <screen>#      group.name   sec.model  sec.name
+group   MyRWGroup     v1         local
+group   MyRWGroup     v2c        local
+group   MyROGroup     v1        mynetwork
+group   MyROGroup     v2c       mynetwork</screen>
+        </listitem>
+        <listitem>
+          <para>Crie uma view para conceder aos grupos permissão:</para>
+          <screen>incl/excl subtree mask view all included .1 </screen>
+        </listitem>
+        <listitem>
+          <para>Conceda accesso com diferentes permissões de escrita a dois grupos na view que você criou.</para>
+          <screen># context     sec.model     sec.level     prefix     read     write     notif
+  access      MyROGroup ""  any noauth     exact      all      none     none
+  access      MyRWGroup ""  any noauth     exact      all      all      all </screen>
+        </listitem>
+      </orderedlist>
+    </listitem>
+    <listitem>
+      <para>Desbloqueie SNMP nas iptables.</para>
+      <screen>iptables -A INPUT -p udp --dport 161 -j ACCEPT</screen>
+    </listitem>
+    <listitem>
+      <para>Ative o serviço SNMP:</para>
+      <screen>service snmpd start</screen>
+    </listitem>
+    <listitem>
+      <para>Certifique-se de que o serviço SNMP é ativado automaticamente durante a ativação do sistema:</para>
+      <screen>chkconfig snmpd on</screen>
+    </listitem>
+  </orderedlist>
+</section>

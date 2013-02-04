@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="installation_steps_overview">
+  <title>Visão geral dos passos de instalação</title>
+  <para>Para qualquer coisa mais que uma simples instalação de avaliação, você precisará de orientação para uma variedade de opções de configuração. É altamente recomendado que você leia o seguinte:</para>
+  <itemizedlist>
+    <listitem><para>Selecionando a arquitetura de implementação</para></listitem>
+    <listitem><para>Selecionando o hipervisor: recursos suportados</para></listitem>
+    <listitem><para>Configuração de rede</para></listitem>
+    <listitem><para>Configuração de storage</para></listitem>
+    <listitem><para>Melhores práticas</para></listitem>
+  </itemizedlist>
+  <orderedlist>
+    <listitem>
+      <para>
+        <emphasis role="bold">Preparação</emphasis>
+      </para>
+      <para>Certifique-se de que o hardware requerido está pronto</para>
+    </listitem>
+    <listitem>
+      <para>(Opcional) Preencha os checklists de preparação</para>
+    </listitem>
+    <listitem>
+      <para><emphasis role="bold">Instale o &PRODUCT;</emphasis></para>
+    </listitem>
+    <listitem>
+      <para>Instale o servidor de gerenciamento (selecione single-node ou multi-node)</para>
+    </listitem>
+    <listitem>
+      <para>Faça login na interface de usuário</para>
+    </listitem>
+    <listitem>
+      <para><emphasis role="bold">Disponibilize a sua infraestrutura de nuvem</emphasis></para>
+    </listitem>
+    <listitem>
+      <para>Adicione uma zona. Inclua o primeiro pod, cluster, e host</para>
+    </listitem>
+    <listitem>
+      <para>Adicione mais pods</para>
+    </listitem>
+    <listitem>
+      <para>Adicione mais clusters</para>
+    </listitem>
+    <listitem>
+      <para>Adicione mais hosts</para>
+    </listitem>
+    <listitem>
+      <para>Adicione mais storage primária</para>
+    </listitem>
+    <listitem>
+      <para>Adicione mais storage secundária</para>
+    </listitem>
+    <listitem>
+      <para><emphasis role="bold">Experimente o uso da nuvem</emphasis></para>
+    </listitem>
+    <listitem>
+      <para>Inicialização e teste</para>
+    </listitem>
+  </orderedlist>
+</section>

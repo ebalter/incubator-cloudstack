@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+	http://www.apache.org/licenses/LICENSE-2.0
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<section id="configure-guest-traffic-in-advanced-zone">
+  <title>Configure o tráfego hóspede na zona avançada</title>
+  <para>Nestes passos se supõe que você já está logado na interface de usuário do &PRODUCT;. Para configurar a base da rede hóspede:</para>
+  <orderedlist>
+    <listitem>
+      <para>No painel de navegação à esquerda, selecione Infrastructure. Em Zones, clique View More, então clique a zona à qual você deseja adicionar uma rede.</para>
+    </listitem>
+    <listitem>
+      <para>Clique na aba Network.</para>
+    </listitem>
+    <listitem>
+      <para>Clique em Add guest network.</para>
+      <para>A janela Add guest network é apresentada:</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="./images/add-guest-network.png"/>
+        </imageobject>
+        <textobject>
+          <phrase>networksetupzone.png: Ilustra a configuração de rede em uma zona</phrase>
+        </textobject>
+      </mediaobject>
+    </listitem>
+    <listitem>
+      <para>Forneça as seguintes informações:</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Name</emphasis>. O nome da rede. Isto será visível pelo usuário</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Display Text</emphasis>: A descrição da rede. Isto será visível pelo usuário</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Zone</emphasis>: A zona na qual você está configurando a rede hóspede.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Network offering</emphasis>: Se o administrador configurou múltiplas ofertas de rede, selecione a que você deseja usar para esta rede</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Guest Gateway</emphasis>: O gateway que os hóspedes devem usar</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Guest Netmask</emphasis>: A máscara de rede em uso na subnet que os hóspedes utilizarão</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>Clique em OK.</para>
+    </listitem>
+  </orderedlist>
+</section>

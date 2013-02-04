@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="deployment-architecture-overview">
+    <title>Visão geral da arquitetura de implementação</title>
+    <para>
+        Uma instalação do &PRODUCT; consiste em dois componentes: o servidor de gerenciamento e a infraestrutura de nuvem que ele gerencia. Quando você monta e gerencia uma nuvem &PRODUCT;, você provê recursos como hosts, equipamentos de storage, e endereços IP no servidor de gerenciamento, e o servidor de gerenciamento gerencia estes recursos.
+    </para>
+    <para>
+        A instalação mínima de produção consiste em uma máquina executando o servidor de gerenciamento do &PRODUCT; e outra atuando como a infraestrutura de rede (neste caso, uma infraestrutura muito simples consistindo em um host executando software hipervisor). Em uma instalação de avaliação, uma única máquina pode atuar tanto como servidor de gerenciamento quanto o host hipervisor (usando o hipervisor KVM).
+    </para>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/basic-deployment.png" />
+        </imageobject>
+        <textobject><phrase>basic-deployment.png: Implementação básica utilizando duas máquinas</phrase></textobject>
+    </mediaobject>
+    <para>
+       Uma instalação com mais recursos consiste em um servidor de gerenciamento em um ambiente multi-node de alta disponibilidade e até milhares de hosts utilizando uma configuração de rede avançada de rede. Para informações sobre opções de implementação, veja Selecionando a arquitetura de implementação.
+    </para>
+    <xi:include href="management-server-overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="cloud-infrastructure-overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="networking-overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</section>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership. The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+	http://www.apache.org/licenses/LICENSE-2.0
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<section id="add-ingress-egress-rules">
+  <title>Adicionando regras de ingresso e egresso a um grupo de segurança</title>
+  <orderedlist>
+    <listitem>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final. </para>
+    </listitem>
+    <listitem>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
+    </listitem>
+    <listitem>
+      <para>Em Select view, selecione Security Groups, então clique no grupo de segurança que você deseja.</para>
+    </listitem>
+    <listitem>
+      <para>Para adicionar uma regra regra de ingresso, clique na aba Ingress Rules e preencha os campos seguintes para especificar qual tráfego de rede é permitido em instâncias de máquinas virtuais neste grupo de segurança. Se nenhuma regra de ingresso é especificada, então nenhum tráfego será permitido entrar, exceto respostas a qualquer tráfego que tenha sido permitido sair por uma regra de  egresso.</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Add by CIDR/Account</emphasis>. Indica se a fonte do tráfego será definida pelo endereço IP (CIDR) ou por um grupo de segurança existente em uma conta do &PRODUCT; (Account). Selecione Account se você deseja permitir tráfego de entrada oriundo de todas as máquinas virtuais em outro grupo de segurança</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Protocol</emphasis>. O protocolo de rede que as fontes utilizarão para enviar tráfego ao grupo de segurança. TCP e UDP são usados tipicamente para intercâmbio de dados e comunicações de usuários finais. ICMP é usado tipicamente para enviar mensagens de erro e dados de monitoração de rede.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Start Port, End Port</emphasis>. (somente para TCP e UDP) Um intervalo de listening ports que são os destinos de tráfego entrante. Se você está abrindo uma única porta, use o mesmo número em ambos os campos.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">ICMP Type, ICMP Code</emphasis>. (somente ICMP) O tipo de mensagem e o código de erro que serão aceitos.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">CIDR</emphasis>. (Adição somente por CIDR) Para aceitar somente tráfego de endereços IP em um bloco de endereços específico, informe um CIDR ou uma lista de CIDRs separados por vírgulas. O CIDR é o endereço IP base do tráfego entrante. Por exemplo, 192.168.0.0/22. Para permitir todos os CIDRs, especifique 0.0.0.0/0.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Account, Security Group</emphasis>. (Adição somente por conta) Para aceitar somente tráfego de outro grupo de segurança, informe a conta do &PRODUCT; e nome de um grupo de segurança que já esteja definido naquela conta. Para permitir tráfego entre máquinas virtuais no grupo de segurança que você está editando, informe o mesmo nome que você usou no passo 7.</para>
+        </listitem>
+      </itemizedlist>
+      <para>O exemplo a seguir permite acesso HTTP entrante de qualquer lugar:</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="./images/http-access.png"/>
+        </imageobject>
+        <textobject>
+          <phrase>httpaccess.png: permite acesso HTTP entrante de qualquer lugar</phrase>
+        </textobject>
+      </mediaobject>
+    </listitem>
+    <listitem>
+      <para>Para adicionar uma regra de egresso, clique na aba Egress Rules e preencha os campos seguintes para especificar qual tipo de tráfego de rede é permitido ser enviado de instâncias de máquinas virtuais neste grupo de segurança. Se nenhuma regra de egresso é especificada, então todo tráfego será permitido sair. Uma vez que regras de egresso são especificadas, os seguintes tipos de tráfego são permitidos sair: tráfego especificado regras de egresso; queries a servidores DNS e DHCP; e respostas a qualquer tráfego que tenha sido permitido entrar através de uma regra de ingresso</para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Add by CIDR/Account</emphasis>. Indica se o destino do tráfego será definido pelo endereço IP (CIDR) ou por um grupo de segurança existente em uma conta do &PRODUCT; (Account). Selecione Account se você deseja permitir tráfego de saída destinado a todas as máquinas virtuais em outro grupo de segurança.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Protocol</emphasis>. O protocolo de rede que máquinas virtuais usarão para enviar tráfego de saída. TCP e UDP são usados tipicamente para intercâmbio de dados e comunicações de usuários finais. ICMP é usado tipicamente para enviar mensagens de erro e dados de monitoração de rede.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Start Port, End Port</emphasis>. (somente para TCP e UDP) Um intervalo de listening ports que são os destinos do tráfego sainte. Se você está abrindo uma única porta, use o mesmo número em ambos os campos.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">ICMP Type, ICMP Code</emphasis>. (somente ICMP) O tipo de mensagem e o código de erro que serão enviados.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">CIDR</emphasis>. (Adição somente por CIDR) Para enviar tráfego somente a endereços IP em um bloco de endereços específico, informe um CIDR ou uma lista de CIDRs separados por vírgulas. O CIDR é o endereço IP base do tráfego entrante. Por exemplo, 192.168.0.0/22. Para permitir todos os CIDRs, especifique 0.0.0.0/0.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Account, Security Group</emphasis>. (Adição somente por conta) Para permitir o envio de tráfego a outro grupo de segurança, informe a conta do &PRODUCT; e nome de um grupo de segurança que já esteja definido naquela conta. Para permitir tráfego entre máquinas virtuais no grupo de segurança que você está editando, informe o nome do grupo.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>Clique em Add.</para>
+    </listitem>
+  </orderedlist>
+</section>

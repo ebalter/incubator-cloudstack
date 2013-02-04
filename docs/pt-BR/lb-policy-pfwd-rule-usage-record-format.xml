@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="loadbalancer-policy-port-forwarding-rule-usage-record-format">
+    <title>Formato do registro do balanceador de carga ou regra de uso de port forwarding</title>
+    <itemizedlist>
+            <listitem><para>account - nome da conta</para></listitem>
+            <listitem><para>accountid - ID da conta</para></listitem>
+            <listitem><para>domainid - ID do domínio no qual a conta reside</para></listitem>
+            <listitem><para>zoneid - zona onde a utilização da conta ocorreu</para></listitem>
+            <listitem><para>description - um string que descreve a que o registro de uso se refere</para></listitem>
+            <listitem><para>usage - representação do uso, incluindo as unidades de uso (e.g. 'Hrs' para horas)</para></listitem>
+            <listitem><para>usagetype - um número representando o tipo de uso (veja Tipos de uso)</para></listitem>
+            <listitem><para>rawusage - um número representando o uso real em horas</para></listitem>
+            <listitem><para>usageid - ID da política do balanceador de carga ou regra de port forwarding</para></listitem>
+            <listitem><para>usagetype - A number representing the usage type (see Usage Types)</para></listitem>
+            <listitem><para>startdate, enddate - o intervalo de tempo para o qual o uso é contabilizado; veja Datas no registro de uso</para></listitem>
+        </itemizedlist>
+</section>

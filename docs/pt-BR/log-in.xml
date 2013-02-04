@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<section id="log-in">
+	<title>Login na interface de usuário</title>
+	<para>O &PRODUCT; provê uma interface de usuário web que pode ser usada tanto por administradores e usuários finais. A versão apropriada da interface é apresentada dependendo das credenciais utilizadas para login. A interface de usuário está disponível em navegados populares, incluindo o IE7, IE8, IE9, Firefox 3.5+, Firefox 4, Safari 4 e Safari 5. A URL é: (substitua pelo endereço IP de seu servidor de gerenciamento)</para>
+	<programlisting>http://&lt;management-server-ip-address&gt;:8080/client</programlisting>
+    <para>Em uma nova instalação do servidor de gerenciamento, uma tela de apresentação é exibida. Em visitas posteriores, você verá uma tela de login onde se especifica o seguinte para seguir para o painel de instrumentos:</para>
+    <formalpara>
+        <title>Nome de usuário</title>
+        <para>A identificação de usuário de sua conta. O nome default de usuário é admin.</para>
+    </formalpara>
+    <formalpara>
+        <title>Senha</title>
+        <para>A senha associada com a identificação do usuário. A senha para identificação default é password.</para>
+    </formalpara>
+    <formalpara>
+        <title>Domínio</title>
+        <para>Se você é um usuário root, deixe este campo em branco.</para>
+    </formalpara>
+    <para>Se você é um usuário nos subdomínios, forneça o caminho completo para o domínio, excluindo o domínio root.</para>
+    <para>Por exemplo, suponha que múltiplos níveis são criados sob o domínio root, tal como Comp1/hr. Os usuários no domínio Comp1 devem informar Comp1 no campo Domain, enquanto os usuários no domínio Comp1/sales devem informar Comp1/sales.</para>    
+    <para>Para mais orientação sobre as escolhas apresentadas quando você faz login na interface de usuário, veja Fazendo login como o administrador root.</para>
+	<xi:include href="end-user-ui-overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="root-admin-ui-overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="log-in-root-admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="changing-root-password.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</section>

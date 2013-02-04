@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="about-hosts">
+    <title>Sobre hosts</title>
+    <para>Um host é um único computador. Hosts fornecem os recursos computacionais que executam as máquinas virtuais hóspedes. Cada host tem software hipervisor instalado para gerenciar as máquinas virtuais hóspedes. Por exemplo, um servidor Linux com KVM habilitado, um servidor Citrix XenServer, e um servidor ESXi são hosts.</para>
+    <para>Um host é a menor unidade organizacional em uma implementação do &PRODUCT;. Hosts estão contidos em clusters, clusters são contidos em pods, e pods são contidos em zonas.</para>
+    <para>Hosts em uma implementação do &PRODUCT;:</para>
+    <itemizedlist>
+        <listitem><para>Proveem os recursos de CPU, memória, storage e de rede necessários para hospedar as máquinas virtuais</para></listitem>
+        <listitem><para>Interconectam-se utilizando uma rede TCP/IP de alta capacidade e conectam-se à Internet</para></listitem>
+        <listitem><para>Podem residir em múltiplos centros de dados em localidades geograficamente diferentes</para></listitem>
+        <listitem><para>Podem ter diferentes capacidades (diferentes velocidades de CPU, diferentes quantidades de RAM, etc.), embora os hosts em um cluster devam ser homogêneos</para></listitem>
+    </itemizedlist>
+    <para>Hosts adicionais podem ser adicionados a qualquer momento para prover mais capacidade para máquinas virtuais hóspedes.</para>
+    <para>O &PRODUCT; automaticamente detecta as quantidades de recursos de CPU e memória fornecidas pelos hosts.</para>
+    <para>Hosts não são visíveis para o usuário final. Um usuário final não pode determinar a qual host sua máquina hóspede foi assinalada.</para>
+    <para>Para que um host funcione no &PRODUCT;, você deve fazer o seguinte:</para>
+    <itemizedlist>
+        <listitem><para>Instalar software hipervisor no host</para></listitem>
+        <listitem><para>Assinalar um endereço IP ao host</para></listitem>
+        <listitem><para>Certificar-se de que o host está conectado ao servidor de gerenciamento do &PRODUCT;</para></listitem>        
+    </itemizedlist>
+</section>

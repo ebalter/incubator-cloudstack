@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="about-physical-networks">
+    <title>Sobre redes físicas</title>
+    <para>Em parte, a adição de uma zona é configurar a rede física. Uma ou (em uma zona avançada) mais redes físicas podem ser associada com cada zona. A rede corresponde a uma NIC no host hipervisor. Cada rede física pode transportar um ou mais tipos de tráfego de rede. As escolhas de tipo de tráfego para cada rede variam dependendo se você está criando uma zona com rede básica ou rede avançada.</para>
+    <para>Uma rede física é o hardware de rede e o cabeamento em uma zona. Uma zona pode ter múltiplas redes físicas. Um administrador pode:</para>
+    <itemizedlist>
+        <listitem><para>Adicionar/Remover/Atualizar redes físicas em uma zona</para></listitem>
+        <listitem><para>Configurar VLANs na rede física</para></listitem>
+        <listitem><para>Configurar um nome para que a rede seja reconhecida pelos hipervisores</para></listitem>
+        <listitem><para>Configurar os provedores de serviços (firewalls, balanceadores de carga, etc.) disponíveis em uma rede física</para></listitem>
+        <listitem><para>Configurar os endereços IP implementados, ou trunked, para uma rede física</para></listitem>
+        <listitem><para>Especificar o tipo de tráfego que é transportado na rede física, assim como outras propriedades como a velocidade da rede</para></listitem>
+    </itemizedlist>
+    <xi:include href="physical-network-configuration-settings.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />  
+    <xi:include href="basic-zone-network-traffic-types.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="basic-zone-guest-ip-addresses.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="advanced-zone-network-traffic-types.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="advanced-zone-guest-ip-addresses.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="advanced-zone-public-ip-addresses.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="system-reserved-ip-addresses.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</section>

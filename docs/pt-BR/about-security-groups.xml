@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<section id="about-security-groups">
+    <title>Sobre grupos de segurança</title>
+    <para>Grupos de segurança fornecem uma maneira de isolar o tráfego de máquinas virtuais. Um grupo de segurança é um grupo de máquinas virtuais que filtram seu tráfego de entrada e de saída de acordo com um conjunto de regras, chamadas de regras de ingresso e de egresso. Estas regras filtram o tráfego de rede de acordo com o endereço IP que está tentando se comunicar com a máquina virtual. Grupos de segurança são particularmente úteis em zonas que utilizam rede básica, porque há uma única rede de hóspede para todas as máquinas virtuais hóspedes. No &PRODUCT; 3.0.3 - 3.0.5, grupos de segurança são suportados apenas em zonas que utilizam rede básica.</para>
+    <note><para>Em uma zona que utiliza rede avançada, você pode definir múltiplas redes hóspedes para isolar o tráfego das máquinas virtuais.</para>
+        </note>
+    <para></para>
+    <para>Cada conta do &PRODUCT; vem com um grupo de segurança default que nega todo o tráfego de entrada e permite todo o tráfego de saída. O grupo de segurança default pode ser modificado de forma que todas as novas máquinas virtuais herdem algum outro conjunto de regras desejado.</para>
+    <para>Qualquer usuário do &PRODUCT; pode configurar qualquer número de grupos de segurança adicionais. Quando uma máquina virtual nova é lançada, é atribuída ao grupo de segurança padrão a menos que outro grupo de segurança definido pelo usuário seja especificado. A máquina virtual pode ser membro de qualquer número de grupos de segurança. Uma vez que a máquina virtual é assinalada a um grupo de segurança, ela permanece no grupo durante toda sua vida; você não pode mover uma máquina virtual em execução de um grupo de segurança para outro.</para>
+    <para>Você pode modificar um grupo de segurança, suprimindo ou acrescentando qualquer número de regras de entrada e saída. Quando o fizer, as novas regras se aplicam a todas as máquinas virtuais no grupo, quer executando ou paradas.</para>
+    <para>Se não há regras de ingresso especificadas, então nenhum tráfego entrante será permitido, exceto para respostas de qualquer tráfego que foi permitido sair através de uma regra de egresso.</para>
+</section>

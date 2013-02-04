@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="about-clusters">
+    <title>Sobre clusters</title>
+    <para>
+       Um cluster provê um modo de agrupar hosts. Para ser preciso, um cluster é um pool de servidores XenServer, um conjunto de servidores KVM, um conjunto de servidores OVM, ou um cluster VMware pré-configurado no vCenter. Todos os hosts em um cluster têm hardwares idênticos, executam o mesmo hipervisor, estão na mesma subnet e acessam a mesma área compartilhada de armazenamento primário. Instâncias de máquinas virtuais (VMs) ativas em um host podem ser migradas para outro host no mesmo cluster, sem interromper os serviços fornecidos ao usuário.
+    </para>
+    <para>
+       Um cluster é a terceira maior unidade organizacional em uma implementação do &PRODUCT;. Clusters são contidos em pods, e pods são contidos em zonas. O tamanho do cluster é limitado pelo hipervisor subjacente, embora o &PRODUCT; recomenda menos na maioria dos caso; veja "Melhores práticas".
+    </para>
+    <para>
+       Um cluster consiste em um ou mais hosts e um ou mais servidor de storage primária.
+    </para>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/cluster-overview.png" />
+        </imageobject>
+        <textobject><phrase>cluster-overview.png: Estrutura de um cluster simples</phrase></textobject>
+    </mediaobject>
+    <para>O &PRODUCT; permite múltiplos clusters em uma implementação de nuvem.</para>
+    <para>
+       Mesmo quando armazenamento local é usado, clusters ainda são requeridos. Mesmo quando há somente um host por cluster.
+    </para>
+    <para>
+       Quando VMware é usado, todo cluster VMware é gerenciado por um servidor vCenter. O administrador deve registrar o servidor vCenter no &PRODUCT;. Pode haver múltiplos servidores vCenter por zona. Cada servidor vCenter pode gerenciar múltiplos clusters VMware.
+    </para>
+</section>

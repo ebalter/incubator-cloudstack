@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="basic-zone-network-traffic-types">
+    <title>Tipos de tráfego de rede da zona básica</title>
+    <para>Quando rede básica é utilizada, somente pode haver um tipo de rede física na zona. Tal rede física transporta os seguintes tipos de tráfego:</para>
+    <itemizedlist>
+        <listitem><para>Hóspede. Quando usuários finais executam máquinas virtuais, eles geram tráfego hóspede. As máquinas virtuais hóspedes podem se comunicar através de uma rede que pode ser referida como a rede hóspede. Cada pod em um zona básica é um domínio de broadcast, e portanto cada pod tem um diferente intervalo IP para a rede hóspede. O administrador pode configurar o intervalo IP para cada pod.</para></listitem>
+        <listitem><para>Gerência. Quando recursos internos do &PRODUCT; comunicam-se entre si, eles geram tráfego de gerência. Isto inclui a comunicação entre hosts, máquinas virtuais do sistema (máquinas virtuais usadas pelo &PRODUCT; para executar várias tarefas na nuvem), e qualquer outro componente que se comunica diretamente com o servidor de gerenciamento do &PRODUCT;. Você deve configurar o intervalo de IP para uso das máquinas virtuais do sistema.</para>
+            <note><para>Recomendamos fortemente o uso de placas de rede separadas para o tráfego de gerência e tráfego de hóspedes.</para></note></listitem>
+        <listitem><para>Público. Tráfego público é gerado quando máquinas virtuais na nuvem acessam a Internet. Endereços IP publicamente acessíveis devem ser alocados para esta finalidade. Usuários finais podem usar a interface de usuário do &PRODUCT; para obter estes endereços IP para implementar NAT entre sua rede hóspede e a rede pública, como descrito em Obtendo um novo endereço IP.</para></listitem>
+        <listitem><para>Storage. Tráfego tal como templates e snapshots de máquinas virtuais, que trafega entre a máquina virtual de storage secundária e os servidores de storage secundária. O &PRODUCT; usa uma Network Interface Controller (NIC), chamada storage NIC, dedicada a tráfego de rede de storage. Uso de uma NIC de storage que sempre opera em uma rede de alta capacidade permite a cópia rápida de template e snapshot. Você deve configurar um intervalo de IP para uso da rede de storage.</para></listitem>
+    </itemizedlist>
+    <para>Em uma rede básica, a configuração da rede física é bastante simples. Na maioria dos casos, você precisa somente configurar uma rede hóspede para transportar tráfego que é gerado pelas máquinas virtuais hóspedes. Se você usa um balanceador de carga NetScaler e habilita suas características de balanceamento elástico de IP e de carga (EIP e ELB), você pode também configurar uma rede para transportar tráfego público. O &PRODUCT; apresenta na interface de usuário os passos de configuração de rede necessários quando você adiciona uma nova zona.</para>
+</section>

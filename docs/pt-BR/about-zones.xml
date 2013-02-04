@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="about-zones">
+    <title>Sobre zonas</title>
+    <para>Uma zona é a maior unidade organizacional em uma instalação CloudStack&#8482; . Uma zona tipicamente corresponde a um único datacenter, apesar de ser possível ter múltiplas zonas no mesmo datacenter. O benefício de se organizar a infraestrutura em zonas é permitir o isolamento físico e redundância. Por exemplo, cada zona pode possuir sua própria alimentação de  energia e link de saída de internet, e zonas podem estar geograficamente separadas (apesar de não ser obrigatório).</para>
+    <para>Uma zona consiste em:</para>
+    <itemizedlist>
+        <listitem><para>Um ou mais pods. Cada pod contém um ou mais clusters de hosts e um ou mais servidores de storage primária.</para></listitem>
+        <listitem><para>Storage secundária, compartilhada por todos os pods na zona.</para></listitem>
+    </itemizedlist>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/zone-overview.png" />
+        </imageobject>
+        <textobject><phrase>zone-overview.png: Estrutura aninhada de uma zona simples</phrase></textobject>
+    </mediaobject>
+    <para>Zonas são visíveis para o usuário final. Quando um usuário ativa uma máquina virtual hóspede, o usuário deve selecionar uma zona para seu hóspede. Usuários podem também ter que copiar seus templates privados para outras zonas para possibilitar a criação de máquinas virtuais hóspedes usando seus templates naquelas zonas.</para>
+    <para>Zonas podem ser públicas ou privadas. Zonas públicas são visíveis por todos usuários. Isto significa que qualquer usuário pode criar um hóspede na zona. Zonas privadas são reservadas para um domínio específico. Somente usuários no domínio ou seus subdomínios podem criam hóspedes na zona.</para>
+    <para>Hosts na mesma zona são diretamente acessíveis entre si, sem precisar passar por um firewall. Hosts em zonas distintas podem acessar um ao outro através de túneis VPN configurados estaticamente.</para>
+    <para>Para cada zona, o administrador deve decidir o seguinte:</para>
+    <itemizedlist>
+        <listitem><para>Quantos pods colocar na zona.</para></listitem>
+        <listitem><para>Quantos clusters colocar em cada pod.</para></listitem>
+        <listitem><para>Quantos hosts colocar em em cada cluster.</para></listitem>
+        <listitem><para>Quantos servidores de storage primária colocar em cada cluster e a capacidade total dos servidores de storage.</para></listitem>
+        <listitem><para>Quanto de storage secundária implantar em uma zona.</para></listitem>
+    </itemizedlist>
+    <para>Quando você adiciona uma zona, você será solicitado a configurar a rede física da zona e adicionar o primeiro pod, primeiro cluster, primeiro host, storage primária inicial, e storage secundária inicial.</para>
+</section>

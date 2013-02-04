@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<section id="ongoing-configuration-of-external-firewalls-loadbalancer">
+  <title>Configuração continuada de firewalls e balanceadores de carga externos</title>
+  <para>Ações adicionais de usuários (e.g. configuração de um encaminhamento de porta) causará programação adicional do firewall e balanceador de carga. Um usuário pode requisitar endereços IP públicos adicionais e encaminhamento de tráfego recebido nestes  IPs para máquinas virtuais específicas. Isto é executado através da habilitação de NAT estático para um endereço IP público, assinalando o IP a uma máquina virtual, e especificando um conjunto de protocolos e intervalos de portas a liberar. Quando uma regra NAT estática é criada, o &PRODUCT; programa o firewall externo da zona com os seguintes objetos:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Uma regra NAT estática que mapeia o endereço IP público ao endereço IP privado de uma máquina virtual.</para>
+    </listitem>
+    <listitem>
+      <para>Uma política de segurança que permite tráfego no conjunto de protocolos e intervalos de porta que são especificados.</para>
+    </listitem>
+    <listitem>
+      <para>Um contador de filtro de firewall que registra o número de bytes do tráfego entrante no IP público.</para>
+    </listitem>
+  </itemizedlist>
+  <para>O número de bytes entrantes e saintes através de NAT de origem, NAT estático, e regras de balanceamento de carga é medido e salvo em cada elemento externo. Este dado é coletado regularmente e armazenado no database do &PRODUCT;.</para>
+</section>

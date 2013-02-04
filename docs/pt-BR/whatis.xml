@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="whatis">
+    <title>O que é o &PRODUCT;?</title>
+    <para>O &PRODUCT; é uma plataforma de software de código aberto que gerencia recursos computacionais para construir nuvens Infrastructure as a Service (IaaS). O &PRODUCT; gerencia a rede, storage, e nós computacionais que compõem a infraestrutura de nuvem. Use o &PRODUCT; para implementar, gerenciar e configurar ambientes de computação em nuvem. Provedores de serviços e empresas são os usuários típicos. Com o &PRODUCT;, você pode:</para>
+    <itemizedlist>
+        <listitem>
+            <para>Estabelecer um serviço sob demanda elástico de computação em nuvem. Provedores de serviços podem vender instâncias self service de máquinas virtuais, volumes de armazenamento e configurações de rede pela Internet.</para></listitem>
+        <listitem>
+            <para>Estabelecer na empresa uma nuvem privada para uso dos funcionários. Ao invés de gerenciar máquinas virtuais do mesmo modo que máquinas físicas, com o &PRODUCT; uma empresa pode oferecer máquinas virtuais self-service para usuários sem envolver os departamentos de TI.</para></listitem>
+    </itemizedlist>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/1000-foot-view.png" />
+        </imageobject>
+        <textobject><phrase>1000-foot-view.png: Visão geral do &PRODUCT;</phrase></textobject>
+    </mediaobject>
+</section>

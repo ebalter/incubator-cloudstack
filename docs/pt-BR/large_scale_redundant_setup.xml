@@ -1,0 +1,42 @@
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0.
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="large_scale_redundant_setup">
+    <title>Configuração redundante em larga escala</title>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="./images/large-scale-redundant-setup.png" />
+        </imageobject>
+        <textobject><phrase>Configuração redundante em larga escala</phrase></textobject>
+    </mediaobject>
+    <para>Este diagrama ilustra a arquitetura de rede de uma implementação redundante em larga escala do &PRODUCT;.</para>
+    <itemizedlist>
+        <listitem><para>Uma camada de comutação em layer-3 está no núcleo do data center. Um protocolo redundante de roteamento como VRRP deve ser implementado. Tipicamente, switches centrais de topo de linha também incluem módulos firewall. Aplicações de firewall distintas podem também ser usadas se a switches layer-3 não têm serviço de firewall integrado. Os firewalls são configurados em modo NAT. Os firewalls proveem as seguintes funções:</para>
+            <itemizedlist>		
+	        <listitem><para>Encaminha requisições HTTP e chamadas API da Internet para o servidor de gerenciamento. O servidor de gerenciamento reside na rede de gerência.</para></listitem>
+	        <listitem><para>Quando a nuvem se estende por múltiplas zonas, os firewalls devem habilitar VPNs entre sites, de forma que servidores em diferentes zonas possam conectar-se um ao outro diretamente.</para></listitem>
+            </itemizedlist>
+        </listitem>
+        <listitem><para>Um acesso em switch layer-2 é estabelecido para cada pod. Múltiplas switches podem ser empilhadas para aumentar o número de portas. Em qualquer caso, pares redundantes de switches layer-2 devem ser implementados.</para></listitem>
+        <listitem><para>O cluster do servidor de gerenciamento (incluindo os balanceadores de carga front-end, nós servidores de gerenciamento, e o database MySQL) é conectado à rede de gerência através de um par de balanceadores de carga.</para></listitem>
+        <listitem><para>Servidores de storage secundária são conectados à rede de gerência.</para></listitem>
+        <listitem><para>Cada pod contém servidores de storage e de computação. Cada servidor de storage e computação deve ter NICs redundantes conectadas a switches layer-2 de acesso distintas.</para></listitem>
+    </itemizedlist>
+</section>

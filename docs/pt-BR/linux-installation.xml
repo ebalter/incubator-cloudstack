@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="linux-installation">
+    <title>Instalação do sistema operacional Linux</title>
+    <para>Siga os seguintes passos para iniciar a instalação do Linux:</para>
+    <orderedlist>
+        <listitem><para>Faça download do script cloud-set-guest-password:</para>
+        <itemizedlist>
+            <listitem><para>Linux: <ulink url="http://cloudstack.org/dl/cloud-set-guest-password"></ulink></para></listitem>
+            <listitem><para>Windows: <ulink url="http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download"></ulink></para></listitem>
+        </itemizedlist>
+        </listitem>
+        <listitem><para>Copie este arquivo para /etc/init.d.</para>
+        <para>Em algumas distribuições Linux, copie o arquivo para /etc/rc.d/init.d.</para>
+            </listitem>
+        <listitem><para>Execute o seguinte comando para tornar executável o script:</para><programlisting>chmod +x /etc/init.d/cloud-set-guest-password</programlisting>
+            </listitem>
+        <listitem><para>Dependendo da distribuição Linux, continue com o passo apropriado.</para><para>No Fedora, CentOS/RHEL, e Debian, execute:</para><programlisting>chkconfig --add cloud-set-guest-password</programlisting>
+            <para condition="community">No Ubuntu com ferramentas VMware, ligue o arquivo do script aos diretórios /etc/network/if-up e /etc/network/if-down, e execute o script:</para>
+            <programlisting condition="community">#ln -s /etc/init.d/cloud-set-guest-password /etc/network/if-up/cloud-set-guest-password
+            #ln -s /etc/init.d/cloud-set-guest-password /etc/network/if-down/cloud-set-guest-password</programlisting>
+            <para condition="community">Se você está usando o Ubuntu 11.04, inicie criando um diretório chamado /var/lib/dhcp3 na sua máquina Ubuntu (contorno para uma particularidade com esta versão do Ubuntu). Em todas as versões do Ubuntu: execute “sudo update-rc.d cloud-set-guest-password defaults 98”. Para testar, execute "mkpasswd" e verifique se isto gera uma nova senha. Se o comando “mkpasswd” não existe, execute "sudo apt-get install whois" (ou sudo apt-get install mkpasswd, dependendo da sua versão do Ubuntu) e repita.</para>
+            </listitem>
+    </orderedlist>
+    </section>

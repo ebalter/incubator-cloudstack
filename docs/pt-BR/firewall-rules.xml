@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="firewall-rules">
+    <title>Regras de firewall</title>
+    <para>Por default, todo o tráfego entrante no endereço IP público é rejeitado pelo firewall. Para permitir tráfego externo, você pode abrir portas no firewall especificando regras de firewall. Opcionalmente, você pode especificar um ou mais CIDRs para filtrar os IPs de origem. Isto é útil quando você deseja permitir tráfego entrante somente de certos endereços IP.</para>
+    <para>Você não pode usar regras de firewall para abrir portas para um endereço IP elástico. Quando um IP elástico é usado, acesso externo é controlado pelo uso de grupos de segurança. Veja <xref linkend="add-security-group" />.</para>
+    <para>Regras de firewall podem ser criadas usando a aba Firewall no interface de usuário do Servidor de gerenciamento. Por default, esta aba não é apresentada quando o &PRODUCT; é instalado. Para exibir a aba Firewall, o administrador do &PRODUCT; deve configurar o parâmetro global firewall.rule.ui.enabled como "true."</para>
+    <para>Para criar uma regra de firewall:</para>
+    <orderedlist>
+        <listitem><para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final. </para></listitem>
+        <listitem><para>Na barra de navegação à esquerda, selecione Network.</para></listitem>
+        <listitem><para>Clique no nome da rede com a qual você quer trabalhar.</para></listitem>
+        <listitem><para>Clique em View IP Addresses.</para></listitem>
+        <listitem><para>Clique no endereço IP com o qual você deseja trabalhar.</para>
+        </listitem>
+        <listitem><para>Clique na aba Configuration e preencha os seguintes valores.</para>
+        <itemizedlist>
+            <listitem><para><emphasis role="bold">Source CIDR</emphasis>. (Opcional) Para aceitar tráfego somente de endereços IP em um bloco de endereços específico, informe um CIDR ou uma lista de CIDRs separados por vírgulas.. Exemplo: 192.168.0.0/22. Deixe vazio para permitir todos os CIDRs.</para></listitem>
+            <listitem><para><emphasis role="bold">Protocol</emphasis>. <emphasis role="bold">Protocol</emphasis>. O protocolo de comunicação em uso na(s) porta(s) aberta(s).</para></listitem>
+            <listitem><para><emphasis role="bold">Start Port e End Port</emphasis>. A(s) porta(s) que você deseja abrir no firewall. Se você está abrindo um única porta, use o mesmo número em ambos os campos</para></listitem>
+            <listitem><para><emphasis role="bold">ICMP Type e ICMP Code</emphasis>. Usados somete se Protocol é configurado como ICMP. Proveem o tipo e o código requeridos pelo protocolo ICMP para preencher o cabeçalho ICMP. Consulte a documentação do ICMP para mais detalhes se você não tem certeza do que informar</para></listitem>
+        </itemizedlist></listitem>
+        <listitem><para>Clique em Add</para></listitem>        
+    </orderedlist>
+</section>

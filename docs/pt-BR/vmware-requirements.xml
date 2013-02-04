@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="vmware-requirements">
+    <title>Requerimentos de sistema para hosts vSphere</title>
+    <section id="vmware-requirements-software">
+    <title>Requerimentos de software:</title>
+    <itemizedlist>
+        <listitem>
+        <para>vSphere e vCenter, ambos na versão 4.1 ou 5.0.</para>
+        <para>vSphere Standard é recomendado. Observe, entretanto, que usuários devem considerar as restrições de CPU no licenciamento do vSphere. Veja <ulink url="http://www.vmware.com/files/pdf/vsphere_pricing.pdf">http://www.vmware.com/files/pdf/vsphere_pricing.pdf</ulink> e converse com seu representante de vendas VMware.</para>
+        <para>vCenter Server Standard é recomendado.</para>
+        </listitem>
+        <listitem><para>Certifique-se de todas as hotfixes providas pelo fornecedor do hipervisor estão aplicadas. Acompanhe a liberação de patches do hipervisor através do canal de suporte do fornecedor do hipervisor, e aplique os patches assim que possível após sua liberação. O &PRODUCT; não acompanhará ou o notificará sobre patches do hipervisor requeridos. É essencial que seus hosts estejam completamente atualizados com os patches fornecidos para o hipervisor. O fornecedor do hipervisor provavelmente recusará suportar qualquer sistema que não esteja atualizado com seus patches.</para></listitem>
+    </itemizedlist>
+    <warning><title>Aplique todas as hotfixes necessárias</title><para>A ausência de hotfixes atualizadas pode levar a corrupção de dados e perda de máquinas virtuais.</para></warning>
+    </section>
+    <section id="vmware-requirements-hardware">
+    <title>Requerimentos de hardware:</title>
+    <itemizedlist>
+        <listitem><para>O host deve ser certificado como compatível com o vSphere. Veja o VMware Hardware Compatibility Guide em <ulink url="http://www.vmware.com/resources/compatibility/search.php">http://www.vmware.com/resources/compatibility/search.php</ulink>.</para></listitem>
+        <listitem><para>Todos os hosts devem ser 64-bit e devem suportar HVM (Intel-VT ou AMD-V habilitados).</para></listitem>
+        <listitem><para>Todos os hosts em um cluster devem ser homogêneos. As CPUs devem ser do mesmo tipo, quantidade, e apresentar os mesmos recursos.</para></listitem>
+        <listitem><para>CPU x86 64-bit (mais cores resultam em melhor performance)</para></listitem>
+        <listitem><para>Suporte de virtualização de hardware requerido</para></listitem>
+        <listitem><para>4 GB de memória</para></listitem>
+        <listitem><para>36 GB de disco local</para></listitem>
+        <listitem><para>No mínimo 1 NIC</para></listitem>
+        <listitem><para>Endereço IP estaticamente assinalado</para></listitem>
+    </itemizedlist>
+    </section>
+    <section id="vmware-requirements-vcenter">
+    <title>Requerimentos do servidor vCenter:</title>
+    <itemizedlist>
+        <listitem><para>Processador - 2 processadores x86 com CPUs 2.0GHz ou superiores da Intel ou AMD. Requerimentos do processador podem ser maiores se o database é executado na mesma máquina.</para></listitem>
+        <listitem><para>Memória - 3GB RAM. Requerimentos de RAM podem ser maiores se seu database executa na mesma máquina.</para></listitem>
+        <listitem><para>Espaço em disco - 2GB. Requerimentos de espaço em disco podem ser maiores se seu database executa na mesma máquina.</para></listitem>
+        <listitem><para>Requerimentos de disco do Microsoft SQL Server 2005 Express. O database empacotado com o produto requer até 2GB de espaço livre no disco para descomprimir o pacote de instalação.</para></listitem>
+        <listitem><para>Rede - 1Gbit or 10Gbit.</para></listitem>
+    </itemizedlist>
+    <para>Para informações adicionais, veja "vCenter Server and the vSphere Client Hardware Requirements" em <ulink url="http://pubs.vmware.com/vsp40/wwhelp/wwhimpl/js/html/wwhelp.htm#href=install/c_vc_hw.html">http://pubs.vmware.com/vsp40/wwhelp/wwhimpl/js/html/wwhelp.htm#href=install/c_vc_hw.html</ulink>.</para>
+    </section>
+    <section id="vmware-requirements-other">
+    <title>Outros requerimentos:</title>
+    <itemizedlist>
+        <listitem><para>VMware vCenter Standard Edition 4.1 ou 5.0 deve ser instalado e disponível para gerenciar os hosts vSphere.</para></listitem>
+        <listitem><para>O vCenter deve ser configurado para usar a porta 443 para poder se comunicar com o servidor de gerenciamento do &PRODUCT;.</para></listitem>
+        <listitem><para>Você deve reinstalar o VMware ESXi se você irá reusar um host de uma instalação prévia.</para></listitem>
+        <listitem><para>O &PRODUCT; requer o VMware vSphere 4.1 or 5.0. O VMware vSphere 4.0 não é suportado.</para></listitem>
+        <listitem><para>Todos os hosts devem ser 64-bit e devem suportar HVM (Intel-VT ou AMD-V habilitados). Todos os hosts em um cluster devem ser homogêneos. As CPUs devem ser do mesmo tipo, quantidade, e apresentar os mesmos recursos.</para></listitem>
+        <listitem><para>A rede de gerência do &PRODUCT; não deve ser configurada como uma rede virtual separada. A rede de gerência do &PRODUCT; é a mesma que a rede de gerência do vCenter, e irá herdar sua configuração. Veja <xref linkend="vmware-physical-host-networking-config-vcenter-mgt" />.</para></listitem>
+        <listitem><para>O &PRODUCT; requer o ESXi. ESX não é suportado.</para></listitem>
+        <listitem><para>Todos os recursos usados pelo &PRODUCT; devem ser usados somente pelo &PRODUCT;. O &PRODUCT; não pode compartilhar uma instãncia de ESXi ou storage com outras consoles de gerenciamento. Não compartilhe os volumes de storage que serão utilizados pelo &PRODUCT; com um outro conjunto de servidores ESXi que não são gerenciados pelo &PRODUCT;.</para></listitem>
+        <listitem><para>Coloque todos os hipervisores ESXi alvo em um cluster em um Datacenter separado no vCenter.</para></listitem>
+        <listitem><para>O cluster que será gerenciado pelo &PRODUCT; não deve conter qualquer máquina virtual. Não execute o servidor de gerenciamento, o vCenter ou qualquer outra máquina virtual no cluster que é designado para uso do &PRODUCT;. Crie um cluster separado para uso do &PRODUCT; e certifique-se de que não há máquinas virtuais neste cluster.</para></listitem>
+        <listitem><para>Todas as VLANS requeridas devem passar por tronco em todas as switches que são conectadas aos hosts hipervisores  ESXi. Isto inclui as VLANS para gerência, storage, vMotion, e VLANs hóspedes. A VLAN hóspede (usada em rede avançada; veja Configuração de rede) é um intervalo contínuo de VLANs que será gerenciado pelo &PRODUCT;. <!-- &PRODUCT; supports Nexus 1000v virtual switch. For more information, see <xref linkend="vmware-vsphere-cluster-config-nexus-vswitch" />.--> </para></listitem>
+    </itemizedlist>
+    </section>
+</section>

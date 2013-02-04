@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="configure-package-repository">
+    <title>Configure o repositório de pacotes</title>
+    <para>O &PRODUCT; é distribuído somente através dos fontes nos sites espelho oficiais. 
+        Entretanto, membros da comunidade CloudStack podem criar módulos binários 
+        para que usuários possam instalar o Apache CloudStack sem a necessidade de criá-lo a partir
+        dos fontes.
+    </para>
+    <para>
+        Se você não seguiu os passos para criar seus próprios pacotes a partir dos fontes 
+        nas seções <xref linkend="sect-source-buildrpm" /> e 
+        <xref linkend="sect-source-builddebs" /> você pode encontrar pacotes
+        DEB e RPM preparados para sua conveniência na página de
+        <ulink url="http://incubator.apache.org/cloudstack/downloads.html">download</ulink>.
+    </para>
+    <note>
+        <para>Estes repositórios contêm tanto o servidor de gerenciamento quanto os pacotes do hipervisor KVM.</para>
+    </note>
+    <section id="configure-package-repository-deb">
+        <title>Repositório de pacotes DEB</title>
+        <para>Você pode adicionar um repositório de pacotes DEB a suas fontes apt com os comandos a seguir. Por favor, observe que somente pacotes para o Ubuntu 12.04 LTS (precise) estão sendo preparados atualmente.</para>
+        <para>Use seu editor preferido e abra (ou crie) o arquivo <filename>/etc/apt/sources.list.d/cloudstack.list</filename>. Adicione o repositório fornecido pela comunidade ao arquivo:</para>
+<programlisting>deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+        <para>Agora temos que adicionar a chave pública ao conjunto de chaves confiáveis.</para>
+        <programlisting language="Bash"><prompt>$</prompt> <command>wget</command> -O - http://cloudstack.apt-get.eu/release.asc|apt-key add -</programlisting>
+        <para>Agora atualize seu cache apt local.</para>
+        <programlisting language="Bash"><prompt>$</prompt> <command>apt-get</command> update</programlisting>
+        <para>Seu repositório de pacotes DEB deve estar agora configurado e pronto para uso.</para>
+    </section>
+    <section id="configure-package-repository-rpm">
+        <title>Repositório de pacotes RPM</title>
+        <para>Há um repositório de pacotes RPM para o &PRODUCT;, portanto você pode instalar em plataformas baseadas no RHEL.</para>
+        <para>Se você está usando um sistema baseado em RPM, você irá querer adicionar o repositório Yum de forma que você posa instalar o &PRODUCT; com Yum.</para>
+        <para>Informação sobre repositórios Yum é encontrada em <filename>/etc/yum.repos.d</filename>. Você verá vários arquivos <filename>.repo</filename> neste diretório, cada um denotando um repositório específico.</para>
+        <para>Para adicionar o repositório do &PRODUCT;, crie o arquivo <filename>/etc/yum.repos.d/cloudstack.repo</filename> e insira a seguinte informação.</para>
+        <programlisting>
+[cloudstack]
+name=cloudstack
+baseurl=<replaceable>http://cloudstack.apt-get.eu/rhel/4.0/</replaceable>
+enabled=1
+gpgcheck=0
+        </programlisting>
+        <para>Agora você deve poder instalar o CloudStack usando Yum.</para>
+    </section>
+</section>
