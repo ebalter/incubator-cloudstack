@@ -19,34 +19,29 @@
     under the License.
 -->
 <section id="release-ip-for-vpc">
-  <title>Releasing an IP Address Alloted to a VPC</title>
-  <para>The IP address is a limited resource. If you no longer need a particular IP, you can
-    disassociate it from its VPC and return it to the pool of available addresses. An IP address can
-    be released from its tier, only when all the networking ( port forwarding, load balancing, or
-    StaticNAT ) rules are removed for this IP address. The released IP address will still belongs to
-    the same VPC.</para>
+  <title>Liberando um endereço IP atribuído a uma VPC</title>
+  <para>O endereço IP é um recurso limitado. Se você não precisa mais de um IP particular, você pode desassociá-lo de sua VPC e retorná-lo ao pool de endereços disponíveis. Um endereço IP pode ser liberado de sua camada somente quando todas as rede de rede (port forwarding, balanceamento de carga, ou NAT estática) são removidas para este endereço IP. O endereço IP liberado ainda irá pertencer à mesma VPC.</para>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC whose IP you want to release.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC da qual você deseja liberar o IP.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
-          <para>IP Addresses</para>
+          <para>Endereços IP</para>
         </listitem>
         <listitem>
           <para>Gateways</para>
@@ -60,19 +55,19 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Select IP Addresses.</para>
-      <para>The IP Addresses page is displayed.</para>
+      <para>Selecione IP Addresses.</para>
+      <para>A página IP Addresses é apresentada.</para>
     </listitem>
     <listitem>
-      <para>Click the IP you want to release.</para>
+      <para>Clique no IP que você deseja liberar.</para>
     </listitem>
     <listitem>
-      <para>In the Details tab, click the Release IP button <inlinemediaobject>
+      <para>Na aba Details, clique no botão Release IP <inlinemediaobject>
           <imageobject>
             <imagedata fileref="./images/release-ip-icon.png"/>
           </imageobject>
           <textobject>
-            <phrase>release-ip-icon.png: button to release an IP.</phrase>
+            <phrase>release-ip-icon.png: botão para liberar um IP.</phrase>
           </textobject>
         </inlinemediaobject></para>
     </listitem>

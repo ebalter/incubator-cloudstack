@@ -28,7 +28,7 @@
         Uma instalação do &PRODUCT; consiste em dois componentes: o servidor de gerenciamento e a infraestrutura de nuvem que ele gerencia. Quando você monta e gerencia uma nuvem &PRODUCT;, você provê recursos como hosts, equipamentos de storage, e endereços IP no servidor de gerenciamento, e o servidor de gerenciamento gerencia estes recursos.
     </para>
     <para>
-        A instalação mínima de produção consiste em uma máquina executando o servidor de gerenciamento do &PRODUCT; e outra atuando como a infraestrutura de rede (neste caso, uma infraestrutura muito simples consistindo em um host executando software hipervisor). Em uma instalação de avaliação, uma única máquina pode atuar tanto como servidor de gerenciamento quanto o host hipervisor (usando o hipervisor KVM).
+        A instalação mínima de produção consiste em uma máquina executando o servidor de gerenciamento do &PRODUCT; e outra atuando como a infraestrutura de rede (neste caso, uma infraestrutura muito simples consistindo em um host executando software hipervisor). Na menor implementação possível, uma única máquina pode atuar tanto como servidor de gerenciamento quanto o host hipervisor (usando o hipervisor KVM).
     </para>
     <mediaobject>
         <imageobject>

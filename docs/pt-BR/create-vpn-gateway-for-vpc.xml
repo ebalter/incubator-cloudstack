@@ -29,16 +29,15 @@
     </listitem>
     <listitem>
       <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to deploy the VMs.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja implementar as máquinas virtuais.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
           <para>Endereços IP</para>
@@ -55,15 +54,13 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Select Site-to-Site VPN.</para>
-      <para>If you are creating the VPN gateway for the first time, selecting Site-to-Site VPN
-        prompts you to create a VPN gateway.</para>
+      <para>Selecione Site-to-Site VPN.</para>
+      <para>Se você está criando o gateway VPN pela primeira vez, selecionando Site-to-Site VPN requer de você criar um gateway VPN.</para>
     </listitem>
     <listitem>
-      <para>In the confirmation dialog, click Yes to confirm.</para>
-      <para>Within a few moments, the VPN gateway is created. You will be prompted to view the
-        details of the VPN gateway you have created. Click Yes to confirm.</para>
-      <para>The following details are displayed in the VPN Gateway page:</para>
+      <para>No diálogo de confirmação, clique Yes para confirmar.</para>
+      <para>Em poucos momentos, o gateway VPN é criado. Você será solicitado ver os detalhes do gateway VPN que você criou. Clique Yes para confirmar.</para>
+      <para>Os seguintes detalhes são apresentados na página VPN Gateway:</para>
       <itemizedlist>
         <listitem>
           <para>Endereço IP</para>

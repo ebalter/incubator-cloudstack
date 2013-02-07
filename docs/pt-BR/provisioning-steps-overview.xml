@@ -23,24 +23,24 @@
 -->
 
 <section id="provisioning-steps-overview">
-    <title>Overview of Provisioning Steps</title>
-    <para>After the Management Server is installed and running, you can add the compute resources for it to manage. For an overview of how a &PRODUCT; cloud infrastructure is organized, see <xref linkend="cloud-infrastructure-overview" />.</para>
-    <para>To provision the cloud infrastructure, or to scale it up at any time, follow these procedures:</para>
+    <title>Visão geral dos passos de provisionamento</title>
+    <para>Depois do servidor de gerenciamento ser instalado e estar funcionando, você pode adicionar os recursos de computação para gerenciá-lo. Para uma visão geral de como uma infraestrutura de nuvem  &PRODUCT; é organizada, veja <xref linkend="cloud-infrastructure-overview" />.</para>
+    <para>Para provisionar a infraestrutura de nuvem, ou para escalá-la a qualquer momento, siga estes procedimentos:</para>
     <orderedlist>
-        <listitem><para>Change the root password. See <xref linkend="changing-root-password" />.</para></listitem>
-        <listitem><para>Add a zone. See <xref linkend="zone-add" />.</para></listitem>
-        <listitem><para>Add more pods (optional). See <xref linkend="pod-add" />.</para></listitem>
-        <listitem><para>Add more clusters (optional). See <xref linkend="cluster-add" />.</para></listitem>
-        <listitem><para>Add more hosts (optional). See <xref linkend="host-add" />.</para></listitem>
-        <listitem><para>Add primary storage. See <xref linkend="primary-storage-add" />.</para></listitem>
-        <listitem><para>Add secondary storage. See <xref linkend="secondary-storage-add" />.</para></listitem>
-        <listitem><para>Initialize and test the new cloud. See <xref linkend="initialize-and-test" />.</para></listitem>
+        <listitem><para>Troque a senha de root. Veja <xref linkend="changing-root-password" />.</para></listitem>
+        <listitem><para>Adicione uma zona. Veja <xref linkend="zone-add" />.</para></listitem>
+        <listitem><para>Adicione mais pods (opcional). Veja <xref linkend="pod-add" />.</para></listitem>
+        <listitem><para>Adicione mais clusters (opcional). Veja <xref linkend="cluster-add" />.</para></listitem>
+        <listitem><para>Adicione mais hosts (opcional). Veja <xref linkend="host-add" />.</para></listitem>
+        <listitem><para>Adicione storage primária. Veja <xref linkend="primary-storage-add" />.</para></listitem>
+        <listitem><para>Adicione storage secundária. Veja <xref linkend="secondary-storage-add" />.</para></listitem>
+        <listitem><para>Inicialize e teste a nova nuvem. Veja <xref linkend="initialize-and-test" />.</para></listitem>
     </orderedlist>
-    <para>When you have finished these steps, you will have a deployment with the following basic structure:</para>
+    <para>Quando você terminar estes passos, você terá uma implantação com a seguinte estrutura básica:</para>
     <mediaobject>
         <imageobject>
             <imagedata fileref="./images/provisioning-overview.png" />
         </imageobject>
-        <textobject><phrase>provisioning-overview.png: Conceptual overview of a basic deployment</phrase></textobject>
+        <textobject><phrase>provisioning-overview.png: Visão conceitual de uma implementação básica</phrase></textobject>
     </mediaobject>
 </section>

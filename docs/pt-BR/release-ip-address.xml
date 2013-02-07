@@ -24,6 +24,7 @@
 
 <section id="release-ip-address">
     <title>Liberando um endereço IP</title>
+    <para>Quando a última regra para um endereço IP for removida, você pode liberar este endereço IP. O endereço IP ainda pertence à VPC; entretanto, ele pode ser utilizado novamente por qualquer rede hóspede.</para>
     <orderedlist>
         <listitem><para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final. </para></listitem>
         <listitem><para>Na barra de navegação à esquerda, selecione Network.</para></listitem>
@@ -39,3 +40,4 @@
         </inlinemediaobject>.</para></listitem>        
     </orderedlist>
 </section>
+

@@ -24,18 +24,18 @@
 
 <section id="pod-add">
 	<title>Adicionando um pod</title>
-    <para>Quando você criou uma nova zona, o &PRODUCT; adicionou o primeiro pod para você. Você pode adicionar mais pods a qualquer momento usando o procedimento nesta seção.</para>
+    <para>Quando você cria uma nova zona, o &PRODUCT; adiciona o primeiro pod para você. Você pode adicionar mais pods a qualquer momento usando o procedimento nesta seção.</para>
     <orderedlist>
-        <listitem><para>Faça login na interface de usuário do &PRODUCT;. Veja <xref linkend="log-in"/>.</para></listitem>
-        <listitem><para>Na barra de navegação à esquerda, selecione Infrastructure. Em Zones, clique em View More, então clique na zona à qual você deseja adicionar um pod.</para></listitem>
+        <listitem><para>Faça login na interface de usuário do &PRODUCT;. Veja <xref linkend="log-in" />.</para></listitem>
+        <listitem><para>No painel de navegação à esquerda, selecione Infrastructure. Em Zones, clique View More, então clique na zona à qual você deseja adicionar um pod.</para></listitem>
         <listitem><para>Clique na aba Compute and Storage. No nó Pods do diagrama, clique em View All.</para></listitem>
         <listitem><para>Clique em Add Pod.</para></listitem>
-        <listitem><para>Forneça os seguintes detalhes no diálogo que se segue.</para>
+        <listitem><para>Forneça os seguintes detalhes no diálogo.</para>
             <itemizedlist>
-                <listitem><para><emphasis role="bold">Nome.</emphasis> O nome do pod.</para></listitem>
+                <listitem><para><emphasis role="bold">Name.</emphasis> O nome do pod.</para></listitem>
                 <listitem><para><emphasis role="bold">Gateway.</emphasis> O gateway para os hosts no pod.</para></listitem>
-                <listitem><para><emphasis role="bold">Netmask.</emphasis> O prefixo de rede que define a subnet do pod. Use a notação CIDR.</para></listitem>
-                <listitem><para><emphasis role="bold">Início/Fim dos IPs reservados para o sistema.</emphasis>  O intervalo de IPs na rede de gerência que o &PRODUCT; usa para gerenciar várias máquinas virtuais do sistema, tais como máquinas virtuais de storage secundária, máquinas virtuais de proxy de console, e DHCP. Para mais informações, veja Endereços IP reservados pelo sistema.</para></listitem>
+                <listitem><para><emphasis role="bold">Netmask.</emphasis> O prefixo de rede que define a subrede deste pod. Utilize a notação CIDR.</para></listitem>
+                <listitem><para><emphasis role="bold">Start/End Reserved System IP.</emphasis> O intervalo IP na rede de gerenciamento que o &PRODUCT; usa para gerenciar várias máquinas virtuais de sistema, tais como as máquinas virtuais de storage secundária, máquinas virtuais de proxy de console, e DHCP. Para mais informações, veja Endereços IP reservados pelo sistema.</para></listitem>
             </itemizedlist>
         </listitem>
         <listitem><para>Clique em OK.</para></listitem>

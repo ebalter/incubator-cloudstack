@@ -24,7 +24,7 @@
 
 <section id="networking-in-a-pod">
     <title>Rede em um pod</title>
-    <para>A figura 2 ilustra a configuração de rede em um único pod. Os hosts são conectados a uma switch do nível de pod. No mínimo, os hosts devem ter uma conexão física com cada switch. Bonded NICs também são suportadas. A switch do nível de pod é um par de switches gigabit redundantes com uplinks de 10 G.</para>
+    <para>A figura abaixo ilustra a configuração de rede em um único pod. Os hosts são conectados a uma switch do nível de pod. No mínimo, os hosts devem ter uma conexão física com cada switch. Bonded NICs também são suportadas. A switch do nível de pod é um par de switches gigabit redundantes com uplinks de 10 G.</para>
     <mediaobject>
         <imageobject>
             <imagedata fileref="./images/networking-in-a-pod.png" />

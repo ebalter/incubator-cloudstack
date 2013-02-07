@@ -19,36 +19,31 @@
 	under the License.
 -->
 <section id="enable-disable-static-nat-vpc">
-  <title>Enabling or Disabling Static NAT on a VPC</title>
-  <para>A static NAT rule maps a public IP address to the private IP address of a VM in a VPC to
-    allow Internet traffic to it. This section tells how to enable or disable static NAT for a
-    particular IP address in a VPC.</para>
-  <para>If port forwarding rules are already in effect for an IP address, you cannot enable static
-    NAT to that IP.</para>
-  <para>If a guest VM is part of more than one network, static NAT rules will function only if they
-    are defined on the default network.</para>
+  <title>Habilitando ou desabilitando NAT estática em uma VPC</title>
+  <para>Uma regra NAT estática mapeia um endereço IP público para o endereço IP privado de uma máquina virtual em uma VPC para permitir tráfego da Internet para ela. Esta seção informa como habilitar ou desabilitar NAT estática para um endereço IP em particular em uma VPC.</para>
+  <para>Se regras de encaminhamento de portas já estão em efeito para um endereço IP, você não pode habilitar NAT estática para este IP.</para>
+  <para>Se uma máquina virtual hóspede faz parte de mais de uma rede, regras de NAT estática funcionarão somente se elas estão definidas na rede default.</para>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to deploy the VMs.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja implementar as máquinas virtuais.</para>
+      <para>Na página VPC apresentada todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
-          <para>IP Addresses</para>
+          <para>Endereços IP</para>
         </listitem>
         <listitem>
           <para>Gateways</para>
@@ -62,36 +57,35 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Select IP Addresses.</para>
-      <para>The IP Addresses page is displayed.</para>
+      <para>Selecione IP Addresses.</para>
+      <para>A página IP Addresses é apresentada.</para>
     </listitem>
     <listitem>
-      <para>Click the IP you want to work with.</para>
+      <para>Clique no IP com o qual você deseja trabalhar.</para>
     </listitem>
     <listitem>
-      <para>In the Details tab,click the Static NAT button.<inlinemediaobject>
+      <para>Na aba Details,clique no botão Static NAT.<inlinemediaobject>
           <imageobject>
             <imagedata fileref="./images/enable-disable.png"/>
           </imageobject>
           <textobject>
-            <phrase>enable-disable.png: button to enable Statid NAT.</phrase>
+            <phrase>enable-disable.png: botão para habilitar Static NAT.</phrase>
           </textobject>
-        </inlinemediaobject>The button toggles between Enable and Disable, depending on whether
-        static NAT is currently enabled for the IP address.</para>
+        </inlinemediaobject>O botão alterna entre Enable e Disable, dependendo se NAT estática está habilitada ou não para o endereço IP.</para>
     </listitem>
     <listitem>
-      <para>If you are enabling static NAT, a dialog appears as follows:</para>
+      <para>Se você está habilitando NAT estática, um diálogo é apresentado como se segue:</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="./images/select-vm-staticnat-vpc.png"/>
         </imageobject>
         <textobject>
-          <phrase>select-vmstatic-nat.png: selecting a tier to apply staticNAT.</phrase>
+          <phrase>select-vmstatic-nat.png: selecionando uma camada para aplicar static NAT.</phrase>
         </textobject>
       </mediaobject>
     </listitem>
     <listitem>
-      <para>Select the tier and the destination VM, then click Apply.</para>
+      <para>Selecione a camada e a máquina virtual de destino, e então clique em Apply.</para>
     </listitem>
   </orderedlist>
 </section>

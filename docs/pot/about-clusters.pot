@@ -5,22 +5,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2013-02-02T20:11:56\n"
-"PO-Revision-Date: 2013-02-02T20:11:56\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2013-02-07 10:34-0300\n"
+"Last-Translator: ebalter <ebalter@gmail.com>\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
 #, no-c-format
 msgid "About Clusters"
-msgstr ""
+msgstr "Sobre clusters"
 
 #. Tag: para
 #, no-c-format
 msgid "A cluster provides a way to group hosts. To be precise, a cluster is a XenServer server pool, a set of KVM servers, , or a VMware cluster preconfigured in vCenter. The hosts in a cluster all have identical hardware, run the same hypervisor, are on the same subnet, and access the same shared primary storage. Virtual machine instances (VMs) can be live-migrated from one host to another within the same cluster, without interrupting service to the user."
-msgstr ""
+msgstr "Um cluster provê um modo de agrupar hosts. Mais precisamente, um cluster é um pool de servidores XenServer, um conjunto de servidores KVM, um conjunto de servidores OVM, ou um cluster VMware pré-configurado no vCenter. Todos os hosts em um cluster têm hardwares idênticos, executam o mesmo hipervisor, estão na mesma subnet e acessam a mesma storage primária compartilhada. Instâncias de máquinas virtuais (VMs) ativas em um host podem ser migradas para outro host no mesmo cluster, sem interromper os serviços fornecidos ao usuário."
 
 #. Tag: para
 #, no-c-format

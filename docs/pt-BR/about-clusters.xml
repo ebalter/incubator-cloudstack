@@ -25,7 +25,7 @@
 <section id="about-clusters">
     <title>Sobre clusters</title>
     <para>
-       Um cluster provê um modo de agrupar hosts. Para ser preciso, um cluster é um pool de servidores XenServer, um conjunto de servidores KVM, um conjunto de servidores OVM, ou um cluster VMware pré-configurado no vCenter. Todos os hosts em um cluster têm hardwares idênticos, executam o mesmo hipervisor, estão na mesma subnet e acessam a mesma área compartilhada de armazenamento primário. Instâncias de máquinas virtuais (VMs) ativas em um host podem ser migradas para outro host no mesmo cluster, sem interromper os serviços fornecidos ao usuário.
+       Um cluster provê um modo de agrupar hosts. Mais precisamente, um cluster é um pool de servidores XenServer, um conjunto de servidores KVM, um conjunto de servidores OVM, ou um cluster VMware pré-configurado no vCenter. Todos os hosts em um cluster têm hardwares idênticos, executam o mesmo hipervisor, estão na mesma subnet e acessam a mesma storage primária compartilhada. Instâncias de máquinas virtuais (VMs) ativas em um host podem ser migradas para outro host no mesmo cluster, sem interromper os serviços fornecidos ao usuário.
     </para>
     <para>
        Um cluster é a terceira maior unidade organizacional em uma implementação do &PRODUCT;. Clusters são contidos em pods, e pods são contidos em zonas. O tamanho do cluster é limitado pelo hipervisor subjacente, embora o &PRODUCT; recomenda menos na maioria dos caso; veja "Melhores práticas".
@@ -41,7 +41,7 @@
     </mediaobject>
     <para>O &PRODUCT; permite múltiplos clusters em uma implementação de nuvem.</para>
     <para>
-       Mesmo quando armazenamento local é usado, clusters ainda são requeridos. Mesmo quando há somente um host por cluster.
+       Mesmo quando exclusivamente armazenamento local é usado, clusters ainda são organizacionalmente requeridos, mesmo que haja somente um host por cluster.
     </para>
     <para>
        Quando VMware é usado, todo cluster VMware é gerenciado por um servidor vCenter. O administrador deve registrar o servidor vCenter no &PRODUCT;. Pode haver múltiplos servidores vCenter por zona. Cada servidor vCenter pode gerenciar múltiplos clusters VMware.

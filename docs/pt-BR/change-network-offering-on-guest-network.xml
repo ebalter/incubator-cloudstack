@@ -29,12 +29,7 @@
         <listitem><para>Log in to the &PRODUCT; UI as an administrator or end user. </para></listitem>
         <listitem><para>Se você está alterando uma oferta de rede que usa o roteador virtual do &PRODUCT; para uma que use equipamentos externos como provedores de serviço de rede, você deve primeiro parar todas as máquinas virtuais na rede. Veja Parando e ativando máquinas virtuais, então retorne aqui e continue com o próximo passo.</para></listitem>
         <listitem><para>Na barra de navegação à esquerda, selecione Network</para></listitem>
-        <listitem><para>Clique no nome da rede que você deseja modificar <inlinemediaobject>
-            <imageobject>
-                <imagedata fileref="./images/edit-icon.png" />
-            </imageobject>
-            <textobject><phrase>AttachDiskButton.png: botão para attachar um volume</phrase></textobject>
-        </inlinemediaobject>.</para></listitem>
+        <listitem><para>Clique no nome da rede que você deseja modificar <inlinemediaobject> <imageobject> <imagedata fileref="./images/edit-icon.png" /> </imageobject> <textobject><phrase>AttachDiskButton.png: botão para fazer attach de um volume</phrase></textobject> </inlinemediaobject>.</para></listitem>
         <listitem><para>Em Network Offering, escolha a nova oferta de rede, então clique em Apply.</para></listitem>
         <listitem><para>Um aviso aparece perguntando se você quer manter o CIDR existente. Isto é para lhe dar ciência que se você alterar a oferta de rede, o CIDR será afetado. Escolha No para continuar com a mudança.</para></listitem>
         <listitem><para>Aguarde a atualização se completar. Não tente restartar máquinas virtuais até que a alteração da rede esteja completa.</para></listitem>

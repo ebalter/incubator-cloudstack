@@ -19,26 +19,25 @@
     under the License.
 -->
 <section id="create-vpn-connection-vpc">
-  <title>Creating a VPN Connection</title>
+  <title>Criando uma conexão VPN</title>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you create for the account are listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você cria para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to deploy the VMs.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja implementar as máquinas virtuais.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
           <para>IP Addresses</para>
@@ -55,47 +54,46 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Select Site-to-Site VPN.</para>
-      <para>The Site-to-Site VPN page is displayed.</para>
+      <para>Selecione Site-to-Site VPN.</para>
+      <para>A página Site-to-Site VPN é apresentada.</para>
     </listitem>
     <listitem>
-      <para>From the Select View drop-down, ensure that VPN Connection is selected.</para>
+      <para>Na lista suspensa Select View, certifique-se de que VPN Connection é selecionada.</para>
     </listitem>
     <listitem>
-      <para>Click Create VPN Connection.</para>
-      <para> The Create VPN Connection dialog is displayed:</para>
+      <para>Clique em Create VPN Connection.</para>
+      <para> O diálogo Create VPN Connection é apresentado:</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="./images/create-vpn-connection.png"/>
         </imageobject>
         <textobject>
-          <phrase>createvpnconnection.png: creating a vpn connection to the customer
-            gateway.</phrase>
+          <phrase>createvpnconnection.png: crianto uma conexão para o gateway cliente.</phrase>
         </textobject>
       </mediaobject>
     </listitem>
     <listitem>
-      <para>Select the desired customer gateway, then click OK to confirm.</para>
-      <para>Within a few moments, the VPN Connection is displayed.</para>
-      <para>The following information on the VPN connection is displayed:</para>
+      <para>Selecione o gateway desejado, então clique OK para confirmar.</para>
+      <para>Em poucos momentos, a conexão VPN é apresentada.</para>
+      <para>A seguinte informação sobre a conexão VPN é apresentada:</para>
       <itemizedlist>
         <listitem>
-          <para>IP Address</para>
+          <para>Endereço IP</para>
         </listitem>
         <listitem>
           <para>Gateway</para>
         </listitem>
         <listitem>
-          <para>State</para>
+          <para>Estado</para>
         </listitem>
         <listitem>
-          <para>IPSec Preshared Key</para>
+          <para>Chave IPSec pré compartilhada</para>
         </listitem>
         <listitem>
-          <para>IKE Policy</para>
+          <para>Política IKE</para>
         </listitem>
         <listitem>
-          <para>ESP Policy</para>
+          <para>Política ESP </para>
         </listitem>
       </itemizedlist>
     </listitem>

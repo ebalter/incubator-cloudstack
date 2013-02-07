@@ -33,12 +33,7 @@
         <listitem><para>Clique em View IP Addresses.</para></listitem>
         <listitem><para>Clique no endereço IP com o qual você deseja trabalhar.</para>
         </listitem>
-        <listitem><para>Clique no botão Static NAT.<inlinemediaobject>
-            <imageobject>
-                <imagedata fileref="./images/release-ip-icon.png" />
-            </imageobject>
-            <textobject><phrase>ReleaseIPButton.png: botão para liberar um IP</phrase></textobject>
-        </inlinemediaobject>O botão alterna entre Enable e Disable, dependendo se NAT estática está habilitada ou não para o endereço IP.</para></listitem>
+        <listitem><para>Clique no botão Static NAT.<inlinemediaobject> <imageobject> <imagedata fileref="./images/release-ip-icon.png" /> </imageobject> <textobject><phrase>ReleaseIPButton.png: botão para liberar um IP</phrase></textobject> </inlinemediaobject>O botão alterna entre Enable e Disable, dependendo se NAT estática está habilitada ou não para o endereço IP.</para></listitem>
         <listitem><para>Se você está habilitando NAT estática, um diálogo é apresentado onde você pode escolher a máquina virtual de destino e clicar em  Apply</para></listitem>        
     </orderedlist>
 </section>

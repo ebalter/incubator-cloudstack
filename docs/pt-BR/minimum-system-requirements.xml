@@ -30,7 +30,76 @@
         <itemizedlist>
             <listitem><para>Sistema operacional:</para>
                 <itemizedlist>
-                    <listitem><para>Preferencial: CentOS/RHEL 6.2+ ou Ubuntu 12.04(.1)</para></listitem>
+                    <listitem><para>Preferencial: CentOS/RHEL 6.2+ ou Ubuntu 12.04(.1)<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<section id="minimum-system-requirements">
+		<title>Requerimentos mínimos de sistema</title>
+		<section id="management-server-system-requirements">
+			<title>Requerimentos de sistema dos servidores de gerenciamento, database, e storage</title>
+		<para>As máquinas onde serão executados o servidor de gerenciamento e o database MySQL devem atender os seguintes requerimentos. As mesmas máquinas podem também ser utilizadas para prover armazenamento primário e secundário, tal como disco local ou via NFS. O servidor de gerenciamento pode ser alocado em uma máquina virtual.
+		</para>
+		<itemizedlist>
+			<listitem><para>Sistema operacional:</para>
+				<itemizedlist>
+                    <listitem><para>Preferencial: CentOS/RHEL 6.3+ ou Ubuntu 12.04(.1)</para></listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem><para>CPU x86 64-bit (mais cores resultam em melhor performance)</para></listitem>
+			<listitem><para>4 GB de memória</para></listitem>
+			<listitem><para>Disco local de 250 GB (mais é melhor; 500 GB são recomendados)</para></listitem>
+			<listitem><para>No mínimo 1 NIC</para></listitem>
+			<listitem><para>Endereço IP estaticamente assinalado</para></listitem>
+			<listitem><para>Nome de domínio totalmente qualificado é retornado pelo comando hostname</para></listitem>
+		</itemizedlist>
+		</section>
+		<section id="hypervisor-system-requirements">
+		<title>Requerimentos de sistema do host/hypervisor</title>
+		<para>O host está onde os serviços de nuvem são executados na forma de máquinas virtuais hóspedes. Cada host é uma máquina que atende os seguintes requerimentos:</para>
+		<itemizedlist>
+            <listitem><para>Deve suportar HVM (Intel-VT ou AMD-V habilitados).</para></listitem> 
+			<listitem><para>CPU x86 64-bit (mais cores resultam em melhor performance)</para></listitem>
+			<listitem><para>Suporte de virtualização de hardware requerido</para></listitem>
+			<listitem><para>4 GB de memória</para></listitem>
+			<listitem><para>36 GB de disco local</para></listitem>
+			<listitem><para>No mínimo 1 NIC</para></listitem>
+            <listitem><note><para>Se DHCP é usado para hosts, certifique-se de que nenhum conflito ocorre entre o servidor DHCP usado para estes hosts e o roteador DHCP criado pelo &PRODUCT;.</para></note></listitem>
+			<listitem><para>Mais recentes hotfixes aplicadas ao software do hipervisor</para></listitem>
+			<listitem><para>Quando você implementa o &PRODUCT;, o host hipervisor não pode ter máquinas virtuais já ativas</para></listitem>
+            <listitem><para>Todos os em um cluster devem ser homogêneos. As CPUs devem ser do mesmo tipo, número e mesmos recursos.</para></listitem>
+		</itemizedlist>
+		<para>Hosts têm requerimentos adicionais dependendo do hipervisor. Veja os requerimentos listados no início da seção Instalação relativa ao hipervisor de sua escolha:</para>
+        <warning>
+            <para>Certifique-se de atender os requerimentos adicionais do hipervisor e os passos de instalação fornecidos neste guia. Hosts hipervisores devem ser adequadamente preparados para trabalhar com o &PRODUCT;. Por exemplo, os requerimentos para o XenServer são listados em Instalação do Citrix XenServer.</para>
+        </warning>
+        <itemizedlist>
+            <listitem><para><xref linkend="hypervisor-kvm-requirements"/></para></listitem>
+            <listitem><para><xref linkend="system-requirements-xenserver-hosts"/></para></listitem>
+            <listitem><para><xref linkend="vmware-requirements"/></para></listitem>
+            <!--            <listitem><para><xref linkend="ovm-requirements"/></para></listitem> -->
+        </itemizedlist>
+    </section>
+</section></para></listitem>
                 </itemizedlist>
             </listitem>
             <listitem><para>CPU x86 64-bit (mais cores resultam em melhor performance)</para></listitem>
