@@ -23,7 +23,7 @@
 -->
 
 <chapter id="hypervisor-installation">
-    <title>Hypervisor Installation</title>
+    <title>Instalação de hipervisor</title>
     <xi:include href="hypervisor-kvm-install-flow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="citrix-xenserver-installation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="vmware-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
