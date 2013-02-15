@@ -84,7 +84,7 @@
           <para><emphasis role="bold">Private Port</emphasis>: A porta que as máquinas virtuais usarão para receber o tráfego.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold"><emphasis role="bold">Algorithm</emphasis>. Escolha o algoritmo de balanceamento de carga que você deseja que o &PRODUCT; use. O &PRODUCT; suporta os seguintes algoritmos bem conhecidos:</para>
+          <para><emphasis role="bold">Algorithm</emphasis>. Escolha o algoritmo de balanceamento de carga que você deseja que o &PRODUCT; use. O &PRODUCT; suporta os seguintes algoritmos bem conhecidos:</para>
           <itemizedlist>
             <listitem>
               <para>Round-robin</para>

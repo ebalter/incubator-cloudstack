@@ -23,6 +23,6 @@
 -->
 
 <section id="static-nat">
-    <title>Static NAT</title>
-    <para>A static NAT rule maps a public IP address to the private IP address of a VM in order to allow Internet traffic into the VM. The public IP address always remains the same, which is why it is called "static" NAT. This section tells how to enable or disable static NAT for a particular IP address.</para>
+    <title>NAT estática</title>
+    <para>Uma regra NAT estática mapeia um endereço IP público a um endereço IP privado de uma máquina virtual para permitir tráfego da Internet para a máquina virtual. O endereço IP público permanece sempre o mesmo, razão pela qual a regra é chamada NAT "estática". Esta seção informa como habilitar ou desabilitar NAT estática para um endereço IP em particular.</para>
 </section>

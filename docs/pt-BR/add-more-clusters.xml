@@ -19,9 +19,8 @@
     under the License.
 -->
 <section id="add-more-clusters">
-  <title>Add More Clusters (Optional)</title>
-  <para>You need to tell &PRODUCT; about the hosts that it will manage. Hosts exist inside clusters,
-    so before you begin adding hosts to the cloud, you must add at least one cluster.</para>
+  <title>Adicione mais clusters (opcional)</title>
+  <para>Você precisa informar ao &PRODUCT; sobre os hosts que ele irá gerenciar. Hosts existem em clusters, portanto antes de você começar a adicionar hosts à nuvem, você deve adicionar pelo menos um cluster.</para>
   <xi:include href="about-clusters.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="add-clusters-kvm-xenserver.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <!--  <xi:include href="add-clusters-ovm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> -->

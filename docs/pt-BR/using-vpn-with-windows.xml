@@ -23,20 +23,20 @@
 -->
 
 <section id="using-vpn-with-windows">
-    <title>Using VPN with Windows</title>
-    <para>The procedure to use VPN varies by Windows version.  Generally, the user must edit the VPN properties and make sure that the default route is not the VPN. The following steps are for Windows L2TP clients on Windows Vista. The commands should be similar for other Windows versions.</para>
+    <title>Usando VPN com Windows</title>
+    <para>O procedimento para usar VPN varia de acordo com a versão do Windows. Geralmente, o usuário deve editar as propriedades da VPN e certificar-se de que a rota default não é a VPN. Os passos seguintes são para clientes Windows L2TP no Windows Vista. Os comandos devem ser similares para outras versões do Windows.</para>
     <orderedlist>
-        <listitem><para>Log in to the &PRODUCT; UI and click on the source NAT IP for the account. The VPN tab should display the IPsec preshared key. Make a note of this and the source NAT IP. The UI also lists one or more users and their passwords. Choose one of these users, or, if none exists, add a user and password.</para></listitem>
-        <listitem><para>On the Windows box, go to Control Panel, then select Network and Sharing center. Click Setup a connection or network.</para></listitem>
-        <listitem><para>In the next dialog, select No, create a new connection.</para></listitem>
-        <listitem><para>In the next dialog, select Use my Internet Connection (VPN).</para></listitem>
-        <listitem><para>In the next dialog, enter the source NAT IP from step 1 and give the connection a name. Check Don't connect now.</para></listitem>
-        <listitem><para>In the next dialog, enter the user name and password selected in step 1.</para></listitem>
-        <listitem><para>Click Create.</para></listitem>
-        <listitem><para>Go back to the Control Panel and click Network Connections to see the new connection. The connection is not active yet.</para></listitem>
-        <listitem><para>Right-click the new connection and select Properties. In the Properties dialog, select the Networking tab.</para></listitem>
-        <listitem><para>In Type of VPN, choose L2TP IPsec VPN, then click IPsec settings. Select Use preshared key. Enter the preshared key from Step 1.</para></listitem>
-        <listitem><para>The connection is ready for activation. Go back to Control Panel -> Network Connections and double-click the created connection.</para></listitem>
-        <listitem><para>Enter the user name and password from Step 1.</para></listitem>
+        <listitem><para>Faça login na interface de usuário do &PRODUCT; e clique no IP NAT de origem para a conta. A aba VPN deve exibir a chave IPsec pré-compartilhada. Tome nota disto e do IP NAT de origem. A interface de usuário também lista um ou mais usuários e suas senhas. Escolha um destes usuários ou, se nenhum existe, adicione um usuário e uma senha.</para></listitem>
+        <listitem><para>No Windows, vá para o Painel de Controle, selecione Centro de Rede e Compartilhamento. Clique em Configurar uma conexão ou uma rede.</para></listitem>
+        <listitem><para>No próximo diálogo, selecione Conectar a um local de trabalho.</para></listitem>
+        <listitem><para>No próximo diálogo, selecione Use minha conexão com a Internet (VPN).</para></listitem>
+        <listitem><para>No próximo diálogo, forneça o endereço IP de origem do passo 1 e dê um nome à conexão. Marque Não conectar agora.</para></listitem>
+        <listitem><para>No próximo diálogo, forneça a identificação de usuário e a senha selecionados no passo 1.</para></listitem>
+        <listitem><para>Clique em Create.</para></listitem>
+        <listitem><para>Volte ao painel de Controle e clique em Conexões de Rede para ver a nova conexão. A conexão ainda não está ativa.</para></listitem>
+        <listitem><para>Clique com o botão da direita na nova conexão e selecione Propriedades. No diálogo de Propriedades, selecione a aba Rede.</para></listitem>
+        <listitem><para>Em Tipo de VPN, escolha L2TP IPsec VPN, e então clique em configurações de IPsec. Selecione Usar chave pré-compartilhada. Forneça a chave pré-compartilhada do passo 1.</para></listitem>
+        <listitem><para>A conexão está pronta para ser ativada. Volte a Painel de Controle -&gt; Conexões de Rede e dê dois cliques na conexão criada.</para></listitem>
+        <listitem><para>Informe a identificação de usuário e a senha do passo 1.</para></listitem>
         </orderedlist>
 </section>

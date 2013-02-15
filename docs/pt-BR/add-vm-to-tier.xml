@@ -19,27 +19,26 @@
     under the License.
 -->
 <section id="add-vm-to-tier">
-  <title>Deploying VMs to the Tier</title>
+  <title>Implantando máquinas virtuais na camada</title>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to deploy the VMs.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja implementar as máquinas virtuais.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas.</para>
     </listitem>
     <listitem>
-      <para>Click the Add VM button of the tier for which you want to add a VM.</para>
-      <para>The Add Instance page is displayed.</para>
-      <para>Follow the on-screen instruction to add an instance. For information on adding an
-        instance, see Adding Instances section in the Installation Guide.</para>
+      <para>Clique no botão Add VM da camada a qual você deseja adicionar uma máquina virtual.</para>
+      <para>A página Add Instance é apresentada.</para>
+      <para>Siga as instruções na tela para adicionar uma instância. Para informações sobre adição de uma instância, veja a seção Adicionando instâncias no Guia de Instalação.</para>
     </listitem>
   </orderedlist>
 </section>

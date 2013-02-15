@@ -19,29 +19,28 @@
 	under the License.
 -->
 <section id="add-portforward-vpc">
-  <title>Adding a Port Forwarding Rule on a VPC</title>
+  <title>Adicionando uma regra de encaminhamento de porta em uma VPC</title>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to deploy the VMs.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja implementar as máquinas virtuais.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
-          <para>IP Addresses</para>
+          <para>Endereços IP</para>
         </listitem>
         <listitem>
           <para>Gateways</para>
@@ -55,34 +54,29 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Choose an existing IP address or acquire a new IP address. Click the name of the IP
-        address in the list.</para>
-      <para>The IP Addresses page is displayed.</para>
+      <para>Escolha um endereço IP existente ou obtenha um novo endereço IP. Clique no nome do endereço IP na lista.</para>
+      <para>A página IP Addresses é apresentada.</para>
     </listitem>
     <listitem>
-      <para>Click the IP address for which you want to create the rule, then click the Configuration
-        tab.</para>
+      <para>Clique no endereço IP para o qual você deseja criar a regra, então clique na aba Configuration.</para>
     </listitem>
     <listitem>
-      <para>In the Port Forwarding node of the diagram, click View All.</para>
+      <para>No nó Port Forwarding do diagrama, clique em View All.</para>
     </listitem>
     <listitem>
-      <para>Select the tier to which you want to apply the rule.</para>
+      <para>Selecione a camada para a qual você deseja aplicar a regra.</para>
     </listitem>
     <listitem>
-      <para>Specify the following:</para>
+      <para>Especifique o seguinte:</para>
       <itemizedlist>
         <listitem>
-          <para><emphasis role="bold">Public Port</emphasis>: The port to which public traffic will
-            be addressed on the IP address you acquired in the previous step.</para>
+          <para><emphasis role="bold">Public Port</emphasis>: A porta para a qual tráfego público será encaminhado no endereço IP que você obteve no passo anterior.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Private Port</emphasis>: The port on which the instance is
-            listening for forwarded public traffic.</para>
+          <para><emphasis role="bold">Private Port</emphasis>: A porta na qual a instância está ouvindo por tráfego público encaminhado.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Protocol</emphasis>: The communication protocol in use between
-            the two ports.</para>
+          <para><emphasis role="bold">Protocol</emphasis>: O protocolo de comunicações em uso entre as duas portas.</para>
           <itemizedlist>
             <listitem>
               <para>TCP</para>
@@ -93,9 +87,8 @@
           </itemizedlist>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Add VM</emphasis>: Click Add VM. Select the name of the
-            instance to which this rule applies, and click Apply.</para>
-          <para>You can test the rule by opening an ssh session to the instance.</para>
+          <para><emphasis role="bold">Add VM</emphasis>: Clique em Add VM. Selecione o nome da instância a qual esta regra se aplica, e clique Apply.</para>
+          <para>Você pode testar a regra abrindo uma sessão ssh com a instância.</para>
         </listitem>
       </itemizedlist>
     </listitem>

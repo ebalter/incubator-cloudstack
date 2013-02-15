@@ -23,8 +23,8 @@
 -->
 
 <section id="secondary-storage">
-    <title>Secondary Storage</title>
-    <para>This section gives concepts and technical details about &PRODUCT; secondary storage. For information about how to install and configure secondary storage through the &PRODUCT; UI, see the Advanced Installation Guide.</para>
+    <title>Storage secundária</title>
+    <para>Esta seção fornece conceitos e detalhes técnicos sobre a storage secundária do &PRODUCT;. Para informações sobre como instalar e configurar storage secundária através da interface de usuário do &PRODUCT; UI, veja o Advanced Installation Guide.</para>
     <para><xref linkend="about-secondary-storage"/></para>
 </section>
 

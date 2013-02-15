@@ -23,9 +23,8 @@
 -->
 
 <chapter id="offerings">
-    <title>Service Offerings</title>
-    <para>In this chapter we discuss compute, disk, and system service offerings. Network offerings
-        are discussed in the section on setting up networking for users.</para>
+    <title>Ofertas de serviços</title>
+    <para>Neste capítulo discutimos ofertas serviços de computação, disco, e sistema. Ofertas de rede são discutidas na seção sobre configuração de rede para usuários.</para>
     <xi:include href="compute-disk-service-offerings.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     <xi:include href="system-service-offerings.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </chapter>

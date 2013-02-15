@@ -19,33 +19,29 @@
 	under the License.
 -->
 <section id="add-gateway-vpc">
-  <title>Adding a Private Gateway to a VPC</title>
-  <para>A private gateway can be added by the root admin only. The VPC private network has 1:1
-    relationship with the NIC of the physical network. No gateways with duplicated VLAN and IP are
-    allowed in the same data center.</para>
+  <title>Adicionando um gateway privado a uma VPC</title>
+  <para>Um gateway privado somente pode ser adicionado pelo administrador root. A rede privada da VPC tem uma relação 1:1 com a NIC da rede física. Nenhum gateway com VLAN e IP duplicado é permitido no mesmo centro de dados.</para>
   <orderedlist>
     <listitem>
-      <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
+      <para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para>
     </listitem>
     <listitem>
-      <para>In the left navigation, choose Network.</para>
+      <para>Na barra de navegação à esquerda, selecione Network.</para>
     </listitem>
     <listitem>
-      <para>In the Select view, select VPC.</para>
-      <para>All the VPCs that you have created for the account is listed in the page.</para>
+      <para>Na view Select, selecione VPC.</para>
+      <para>Todas as VPCs que você criou para a conta são listadas na página.</para>
     </listitem>
     <listitem>
-      <para>Click the Configure button of the VPC to which you want to configure load balancing
-        rules.</para>
-      <para>The VPC page is displayed where all the tiers you created are listed in a
-        diagram.</para>
+      <para>Clique no botão Configure da VPC na qual você deseja configurar regras de balanceamento de carga.</para>
+      <para>Na página VPC apresentada, todas as camadas que você criou são listadas em um diagrama.</para>
     </listitem>
     <listitem>
-      <para>Click the Settings icon.</para>
-      <para>The following options are displayed.</para>
+      <para>Clique no ícone Settings.</para>
+      <para>As seguintes opções são apresentadas.</para>
       <itemizedlist>
         <listitem>
-          <para>IP Addresses</para>
+          <para>Endereços IP</para>
         </listitem>
         <listitem>
           <para>Private Gateways</para>
@@ -59,46 +55,40 @@
       </itemizedlist>
     </listitem>
     <listitem>
-      <para>Select Private Gateways.</para>
-      <para>The Gateways page is displayed.</para>
+      <para>Selecione Private Gateways.</para>
+      <para>A página Gateways é apresentada.</para>
     </listitem>
     <listitem>
-      <para>Click Add new gateway:</para>
+      <para>Clique em Add new gateway:</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="./images/add-new-gateway-vpc.png"/>
         </imageobject>
         <textobject>
-          <phrase>add-new-gateway-vpc.png: adding a private gateway for the VPC.</phrase>
+          <phrase>add-new-gateway-vpc.png: adicionado um gateway privado a uma VPC.</phrase>
         </textobject>
       </mediaobject>
     </listitem>
     <listitem>
-      <para>Specify the following:</para>
+      <para>Especifique o seguinte:</para>
       <itemizedlist>
         <listitem>
-          <para><emphasis role="bold">Physical Network</emphasis>: The physical network you have
-            created in the zone.</para>
+          <para><emphasis role="bold">Physical Network</emphasis>: A rede física que você criou na zona.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">IP Address</emphasis>: The IP address associated with the VPC
-            gateway.</para>
+          <para><emphasis role="bold">IP Address</emphasis>: O endereço IP associado com o gateway VPC.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Gateway</emphasis>: The gateway through which the traffic is
-            routed to and from the VPC.</para>
+          <para><emphasis role="bold">Gateway</emphasis>: O gateway através do qual o tráfego é roteado de e para a VPC.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Netmask</emphasis>: The netmask associated with the VPC
-            gateway.</para>
+          <para><emphasis role="bold">Netmask</emphasis>: A máscara de rede associada com o gateway VPC.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">VLAN</emphasis>: The VLAN associated with the VPC
-            gateway.</para>
+          <para><emphasis role="bold">VLAN</emphasis>: A VLAN associada com o gateway VPC.</para>
         </listitem>
       </itemizedlist>
-      <para>The new gateway appears in the list. You can repeat these steps to add more gateway for
-        this VPC.</para>
+      <para>O novo gateway aparece na lista. Você pode repetir estes passo para adicionar mais gateways para esta VPC.</para>
     </listitem>
   </orderedlist>
 </section>

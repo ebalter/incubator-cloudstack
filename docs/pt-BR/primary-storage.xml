@@ -23,8 +23,8 @@
 -->
 
 <section id="primary-storage">
-    <title>Primary Storage</title>
-    <para>This section gives concepts and technical details about &PRODUCT; primary storage. For information about how to install and configure primary storage through the &PRODUCT; UI, see the Installation Guide.</para>
+    <title>Storage primária</title>
+    <para>Esta seção fornece conceitos e detalhes técnicos sobre a storage primária do &PRODUCT;. Para informações sobre como instalar e configurar storage primária através da interface de usuário do &PRODUCT;, veja o Guia de instalação.</para>
     <para><xref linkend="about-primary-storage"/></para> 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="best-practices-primary-storage.xml"/>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="runtime-behavior-of-primary-storage.xml"/>

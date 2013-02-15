@@ -23,30 +23,30 @@
 -->
 
 <section id="configure-vpn">
-    <title>Configuring VPN</title>
-    <para>To set up VPN for the cloud:</para>
+    <title>Configurando VPN</title>
+    <para>Para configurar VPN para a nuvem:</para>
     <orderedlist>
-        <listitem><para>Log in to the &PRODUCT; UI as an administrator or end user. </para></listitem>
-        <listitem><para>In the left navigation, click Global Settings.</para></listitem>
-        <listitem><para>Set the following global configuration parameters.</para>
+        <listitem><para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final. </para></listitem>
+        <listitem><para>Na barra de navegação à esquerda, clique em Global Settings.</para></listitem>
+        <listitem><para>Configure os seguintes parâmetros de configuração global.</para>
         <itemizedlist>
-            <listitem><para>remote.access.vpn.client.ip.range – The range of IP addressess to be allocated to remote access VPN clients. The first IP in the range is used by the VPN server.</para></listitem>
-            <listitem><para>remote.access.vpn.psk.length – Length of the IPSec key.</para></listitem>
-            <listitem><para>remote.access.vpn.user.limit – Maximum number of VPN users per account.</para></listitem>
+            <listitem><para>remote.access.vpn.client.ip.range – O intervalo de endereços IP a ser alocados para clientes de acesso remoto VPN. O primeiro IP no intervalo é utilizado pelo servidor VPN.</para></listitem>
+            <listitem><para>remote.access.vpn.psk.length – Tamanho da chave IPSec.</para></listitem>
+            <listitem><para>remote.access.vpn.user.limit – Número máximo de usuários VPN por conta.</para></listitem>
         </itemizedlist></listitem></orderedlist>
-        <para>To enable VPN for a particular network:</para>    
+        <para>Para habilitar VPN para uma rede em particular:</para>    
         <orderedlist>
-            <listitem><para>Log in as a user or administrator to the &PRODUCT; UI.</para></listitem>            
-            <listitem><para>In the left navigation, click Network.</para></listitem>
-            <listitem><para>Click the name of the network you want to work with.</para></listitem>
-            <listitem><para>Click View IP Addresses.</para></listitem>
-            <listitem><para>Click one of the displayed IP address names.</para></listitem>
-            <listitem><para>Click the Enable VPN button <inlinemediaobject>
+            <listitem><para>Faça login na interface de usuário do &PRODUCT; como administrador ou usuário final.</para></listitem>            
+            <listitem><para>Na barra de navegação à esquerda, clique em Network.</para></listitem>
+            <listitem><para>Clique no nome da rede com a qual você quer trabalhar.</para></listitem>
+            <listitem><para>Clique em View IP Addresses.</para></listitem>
+            <listitem><para>Clique em um dos endereços IP apresentados.</para></listitem>
+            <listitem><para>Clique no botão Enable VPN <inlinemediaobject>
                 <imageobject>
                     <imagedata fileref="./images/vpn-icon.png" />
                 </imageobject>
-                <textobject><phrase>AttachDiskButton.png: button to attach a volume</phrase></textobject>
+                <textobject><phrase>AttachDiskButton.png: botão para atachar um volume</phrase></textobject>
             </inlinemediaobject>.</para>
-                <para>The IPsec key is displayed in a popup window.</para></listitem>
+                <para>A chave IPsec é apresentada em uma janela popup.</para></listitem>
         </orderedlist>    
 </section>

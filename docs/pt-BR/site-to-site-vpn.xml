@@ -19,40 +19,34 @@
     under the License.
 -->
 <section id="site-to-site-vpn">
-  <title>Setting Up a Site-to-Site VPN Connection</title>
-  <para>A Site-to-Site VPN connection helps you establish a secure connection from an enterprise
-    datacenter to the cloud infrastructure. This allows users to access the guest VMs by
-    establishing a VPN connection to the virtual router of the account from a device in the
-    datacenter of the enterprise. Having this facility eliminates the need to establish VPN
-    connections to individual VMs.</para>
-  <para>The supported endpoints on the remote datacenters are: </para>
+  <title>Configurando uma conexão VPN Site-to-Site</title>
+  <para>Uma conexão VPN Site-to-Site o ajuda a estabelecer uma conexão segura de um centro de dados empresarial à infraestrutura de nuvem. Isto permite o acesso de usuários a máquinas virtuais hóspedes estabelecendo uma conexão VPN de um equipamento no centro de dados da empresa ao roteador virtual da conta . Possuindo este recurso é eliminada a necessidade de estabelecer conexões VPN a máquinas virtuais individuais.</para>
+  <para>Os terminais suportados nos centros de dados remotos são: </para>
   <itemizedlist>
     <listitem>
-      <para>Cisco ISR with IOS 12.4 or later</para>
+      <para>Cisco ISR com IOS 12.4 ou posterior</para>
     </listitem>
     <listitem>
-      <para>Juniper J-Series routers with JunOS 9.5 or later</para>
+      <para>Roteadores Juniper J-Series com JunOS 9.5 ou posterior</para>
     </listitem>
   </itemizedlist>
   <note>
-    <para>In addition to the specific Cisco and Juniper devices listed above, the expectation is
-      that any Cisco or Juniper device running on the supported operating systems are able to
-      establish VPN connections.</para>
+    <para>Adicionalmente aos equipamentos Cisco e Juniper específicos listados acima, a expectativa é que qualquer equipamento Cisco ou Juniper executando os sistemas operacionais suportados sejam capazes de estabelecer conexões VPN.</para>
   </note>
-  <para> To set up a Site-to-Site VPN connection, perform the following:</para>
+  <para> Para configurar uma conexão VPN Site-to-Site, execute o seguinte:</para>
   <orderedlist>
     <listitem>
-      <para>Create a Virtual Private Cloud (VPC).</para>
-      <para>See <xref linkend="configure-vpc"/>.</para>
+      <para>Crie uma Virtual Private Cloud (VPC).</para>
+      <para>Veja <xref linkend="configure-vpc"/>.</para>
     </listitem>
     <listitem>
-      <para>Create a VPN Customer Gateway.</para>
+      <para>Crie um VPN Customer Gateway.</para>
     </listitem>
     <listitem>
-      <para>Create a VPN gateway for the VPC that you created.</para>
+      <para>Crie um VPN gateway para a VPC que você criou.</para>
     </listitem>
     <listitem>
-      <para>Create VPN connection from the VPC VPN gateway to the customer VPN gateway.</para>
+      <para>Crie uma conexão VPN do VPN gateway da VPC para o customer VPN gateway.</para>
     </listitem>
   </orderedlist>
   <xi:include href="create-vpn-customer-gateway.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
